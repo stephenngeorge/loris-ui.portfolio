@@ -10,7 +10,8 @@
     "build:demo": "react-scripts build",
     "build:library": "rm -rf dist && NODE_ENV=production babel src/library --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build:library && npm publish"
   },
   "eslintConfig": {
     "extends": "react-app"
