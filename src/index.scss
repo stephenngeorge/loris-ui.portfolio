@@ -1,2 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap');
+$font-family-serif: 'Roboto Slab', serif !default;
+
 @import 'loriss';
 @import './library/library.scss';
+
+.wrapper {
+  width: 300px;
+  padding: 2rem;
+  margin: 0 2rem;
+  border: 1px solid grey;
+}
