@@ -1,3 +1,21 @@
 .button-row {
+  position: relative;
+  width: 100%;
+  &--list {
+    display: flex;
+    > li {
+      margin-right: 2rem;
+    }
+  }
 
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    border-bottom: 2px solid $color--main;
+    z-index: $zindex-behind;
+  }
 }

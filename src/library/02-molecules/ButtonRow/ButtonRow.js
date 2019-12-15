@@ -26,7 +26,11 @@ const ButtonRow = ({
       <ul className="button-row--list">
         {
           buttons.map((button, i) => {
-            return <Button key={ i } buttonColor={ rowColor } buttonBorderColor={ rowColor } { ...button } />
+            return (
+              <li>
+                <Button key={ i } buttonColor={ rowColor } buttonBorderColor={ rowColor } { ...button } />
+              </li>
+            )
           })
         }
       </ul>

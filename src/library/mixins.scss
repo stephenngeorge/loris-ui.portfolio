@@ -10,7 +10,7 @@
 @mixin button-bg-handler($color, $outline: false, $textColor: $color--light) {
   transition: background-color .3s ease, color .3s ease;
   @if $outline == true {
-    background: none;
+    background-color: #fff;
     &:hover {
       background-color: $color !important;
       color: $textColor;
