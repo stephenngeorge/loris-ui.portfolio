@@ -5,7 +5,8 @@ import {
 } from "./01-atoms"
 
 import {
-  ButtonRow
+  ButtonRow,
+  TextSection
 } from "./02-molecules"
 
 
@@ -13,5 +14,6 @@ export {
   Button,
   ButtonRow,
   RichText,
+  TextSection,
   Title
 }

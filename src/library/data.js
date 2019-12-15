@@ -9,10 +9,12 @@ import { data as TitleData } from './01-atoms/Title/data'
 
 // import data objects from 02-molecules
 import { data as ButtonRowData } from './02-molecules/ButtonRow/data'
+import { data as TextSectionData } from './02-molecules/TextSection/data'
 
 export {
   ButtonData,
   RichTextData,
   TitleData,
-  ButtonRowData
+  ButtonRowData,
+  TextSectionData
 }
