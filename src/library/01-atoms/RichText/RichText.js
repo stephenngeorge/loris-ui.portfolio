@@ -1,3 +1,14 @@
+/**
+ * ----------
+ * RICH TEXT
+ * ----------
+ * 
+ * Rich Text components are simply a wrapper for
+ * other DOM elements. This allows rendering of
+ * any other markup (anchor tags for example) with
+ * consistent/controlled styling
+ */
+
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -6,7 +17,7 @@ const RichText = ({
   children
 }) => {
   const classes = ["rich-text", ...additionalClasses]
-  return children.length <= 0 ? null : (
+  return (
     <div className={`${classes.join(" ")}`}>
       {children}
     </div>

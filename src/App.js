@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Title } from './library'
+import { ButtonRow, Title } from './library'
 
 const App = () => (
   <div className="App">
@@ -12,7 +12,19 @@ const App = () => (
                 'font-weight--normal',
                 'color--dark']}
       />
-      <Button buttonText="Find out more" buttonColor="main" />
+      <ButtonRow 
+        rowColor="main"
+        buttons={[
+          {
+            buttonText: "Get in touch",
+            additionalClasses: ['color--light']
+          },
+          {
+            buttonText: "Upcoming events",
+            buttonOutline: true
+          }
+        ]}
+      />
     </div>
   </div>
 )

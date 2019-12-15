@@ -1,3 +1,14 @@
+/**
+ * ----------
+ * BUTTON
+ * ----------
+ * 
+ * Buttons components render a button as either a
+ * button or anchor tag. If the button is a link,
+ * then the buttonLinkVariation determines if the
+ * button will be rendered as an <a> or a <Link>
+ */
+
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -62,9 +73,9 @@ const Button = ({
     `button-border--${buttonBorderColor}`,
     buttonLarge ? 'button--large' : '',
     buttonBlock ? 'button--block' : '',
+    buttonOutline ? `button--outline` : '',
     buttonOutline ? `button-border--${buttonColor}` : '',
     buttonOutline ? `color--${buttonColor}` : '',
-    buttonOutline ? `bg--light` : '',
     ...additionalClasses
   ]
   

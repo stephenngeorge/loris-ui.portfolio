@@ -4,9 +4,14 @@ import {
   Title
 } from "./01-atoms"
 
+import {
+  ButtonRow
+} from "./02-molecules"
+
 
 export {
   Button,
+  ButtonRow,
   RichText,
   Title
 }

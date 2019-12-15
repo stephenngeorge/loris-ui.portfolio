@@ -7,8 +7,12 @@ import { data as ButtonData } from './01-atoms/Button/data'
 import { data as RichTextData } from './01-atoms/RichText/data'
 import { data as TitleData } from './01-atoms/Title/data'
 
+// import data objects from 02-molecules
+import { data as ButtonRowData } from './02-molecules/ButtonRow/data'
+
 export {
   ButtonData,
   RichTextData,
-  TitleData
+  TitleData,
+  ButtonRowData
 }

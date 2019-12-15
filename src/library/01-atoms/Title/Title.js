@@ -1,3 +1,13 @@
+/**
+ * ----------
+ * TITLE
+ * ----------
+ * 
+ * Title components render a heading of any specified
+ * level. They are rendered with an optional, coloured
+ * highlight that covers half the height of the text
+ */
+
 import React from "react"
 import PropTypes from "prop-types"
 
