@@ -1,0 +1,42 @@
+.button {
+  cursor: pointer;
+
+  padding: .7rem 1rem;
+  border-radius: .25rem;
+  border: 2px solid;
+  font-size: $font-size-base;
+}
+.button--large {
+  font-size: $font-size-lead;
+  padding: 1rem 1.4rem;
+}
+.button--block {
+  width: 100%;
+}
+
+.button.button-border--main {
+  border-color: $color--main;
+  @include button-border-handler($color--main);
+}
+.button.button-border--complementary {
+  border-color: $color--complementary;
+  @include button-border-handler($color--complementary);
+}
+.button.button-border--secondary {
+  border-color: $color--secondary;
+  @include button-border-handler($color--secondary);
+}
+.button.button-border--dark {
+  border-color: $color--dark;
+  @include button-border-handler($color--dark);
+}
+.button.button-border--light {
+  border-color: $color--light;
+  @include button-border-handler($color--light);
+}
+
+.button.bg--main { @include button-bg-handler($color--main); }
+.button.bg--complementary { @include button-bg-handler($color--complementary); }
+.button.bg--secondary { @include button-bg-handler($color--secondary); }
+.button.bg--dark { @include button-bg-handler($color--dark); }
+.button.bg--light { @include button-bg-handler($color--light); }

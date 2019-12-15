@@ -1,0 +1,25 @@
+/// short hand for using media queries at a pre-defined breakpoint
+///
+/// @content
+/// @author stephen pal-george
+/// @param {string} $color
+///
+@mixin button-bg-handler($color) {
+  transition: background-color .3s ease;
+  &:hover {
+    background-color: darken($color, 10%) !important;
+  }
+}
+
+/// short hand for using media queries at a pre-defined breakpoint
+///
+/// @content
+/// @author stephen pal-george
+/// @param {string} $color
+///
+@mixin button-border-handler($color) {
+  transition: border .3s ease;
+  &:hover {
+    border-color: darken($color, 10%) !important;
+  }
+}

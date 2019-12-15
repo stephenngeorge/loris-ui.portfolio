@@ -28,11 +28,11 @@ const Title = ({
         message: "headingText is empty, you must a string of length >= 1"
       })
     }
-    if (["main", "secondary", "complementary", "dark", "light"].indexOf(underlineColor) < 0) {
+    if (["main", "secondary", "complementary", "dark", "light"].indexOf(underlineColor.toLowerCase()) < 0) {
       errors.push({
         type: "VALUE OUT OF RANGE",
         source: "Title > props.outlineColor",
-        message: "Colors in Loris are opinionated, this variable must be string and must be one of 'main', 'secondary', 'complementary', 'dark' or 'light'. These correspond to sass variables"
+        message: "Colors in Loris are opinionated, this variable must be string and must be one of 'main' | 'secondary' | 'complementary' | 'dark' | 'light'. These correspond to sass variables"
       })
     }
 

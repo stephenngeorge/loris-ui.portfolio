@@ -6,7 +6,7 @@ const RichText = ({
   children
 }) => {
   const classes = ["rich-text", ...additionalClasses]
-  return (
+  return children.length <= 0 ? null : (
     <div className={`${classes.join(" ")}`}>
       {children}
     </div>

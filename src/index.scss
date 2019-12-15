@@ -1,15 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap');
-$font-family-serif: 'Roboto Slab', serif !default;
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
-$font-family-sans-serif: 'Open Sans', sans-serif;
-
-$color--main: #6CA4C8 !default;
-$color--secondary: #B88A9F !default;
-$color--dark: #121F1F !default;
-
+@import './library/variables.scss';
 @import 'loriss';
+@import './library/mixins.scss';
 @import './library/library.scss';
+
+* {
+  font-size: $font-size-base;
+}
 
 .wrapper {
   width: 300px;
