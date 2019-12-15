@@ -1,3 +1,15 @@
+/**
+ * ----------
+ * TEXT SECTION
+ * ----------
+ * 
+ * Text Section components comprise a title (whcih defaults to <h2>)
+ * and RichText, rendering the TextSection's children within the
+ * rich-text styled div.
+ * Both components within Text Section are optional and will not generate
+ * any markup if their respective props are empty or undefined.
+ */
+
 import React from "react"
 import PropTypes from "prop-types"
 
