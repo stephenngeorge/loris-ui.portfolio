@@ -10,6 +10,7 @@ import { data as TitleData } from './01-atoms/Title/data'
 // import data objects from 02-molecules
 import { data as ButtonRowData } from './02-molecules/ButtonRow/data'
 import { data as IconsListData } from './02-molecules/IconsList/data'
+import { data as SideNavData } from './02-molecules/SideNav/data'
 import { data as TextSectionData } from './02-molecules/TextSection/data'
 
 export {
@@ -18,5 +19,6 @@ export {
   TitleData,
   ButtonRowData,
   IconsListData,
+  SideNavData,
   TextSectionData
 }

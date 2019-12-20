@@ -10,26 +10,23 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { facebook_logo, sent_mail, twitter_logo } from '../../demo/assets'
-
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
-  icons: [
+  direction: 'column',
+  linkColor: 'secondary',
+  menuItems: [
     {
-      name: 'facebook',
-      link: 'https://www.facebook.com',
-      src: facebook_logo
+      label: 'about',
+      link: '/about'
     },
     {
-      name: 'twitter',
-      link: 'https://twitter.com',
-      src: twitter_logo
+      label: 'contact',
+      link: '/contact'
     },
     {
-      name: 'email',
-      link: 'https://google.co.uk',
-      src: sent_mail
+      label: 'galleries',
+      link: '/galleries'
     }
   ]
 }
