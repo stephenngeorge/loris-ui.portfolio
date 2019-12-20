@@ -1,0 +1,52 @@
+.icons-list {
+  display: flex;
+  list-style-type: none;
+
+  img { width: 100%; }
+}
+
+.icons-list.icons--lg img { max-width: 5rem; }
+.icons-list.icons--md img { max-width: 3.6rem; }
+.icons-list.icons--sm img { max-width: 2.5rem; }
+.icons-list.icons--xs img { max-width: 1.4rem; }
+
+.icons-list.icons-list--column { flex-direction: column; }
+.icons-list.icons-list--row { flex-direction: row; }
+.icons-list.icons-list--column-reverse { flex-direction: column-reverse; }
+.icons-list.icons-list--row-reverse { flex-direction: row-reverse; }
+
+.icons-list.icons-list--column {
+  li {
+    margin-bottom: 1.5rem;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.icons-list.icons-list--column-reverse {
+  li {
+    margin-bottom: 1.5rem;
+    &:nth-child(1) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.icons-list.icons-list--row {
+  li {
+    margin-right: 1.5rem;
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+}
+
+.icons-list.icons-list--row-reverse {
+  li {
+    margin-right: 1.5rem;
+    &:nth-child(1) {
+      margin-right: 0;
+    }
+  }
+}

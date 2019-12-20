@@ -6,6 +6,7 @@ import {
 
 import {
   ButtonRow,
+  IconsList,
   TextSection
 } from "./02-molecules"
 
@@ -13,6 +14,7 @@ import {
 export {
   Button,
   ButtonRow,
+  IconsList,
   RichText,
   TextSection,
   Title

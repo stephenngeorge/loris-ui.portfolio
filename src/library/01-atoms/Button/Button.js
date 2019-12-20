@@ -62,7 +62,10 @@ const Button = ({
         message: "buttonType is out of range, must be one of 'a' | 'button'"
       })
     }
-    
+
+    for (const error of errors) {
+      console.warn(`${error.type}: ${error.source}\n${error.message}`)
+    }
     
     return errors
   }
