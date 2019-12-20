@@ -1,13 +1,15 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { SideNav } from './library'
-import { SideNavData } from './library/data'
+import { Card } from './library'
+import { CardData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <SideNav {...SideNavData} />
+      <Card { ...CardData }>
+        <p>This is the body text</p>
+      </Card>
     </div>
   </Router>
 )
