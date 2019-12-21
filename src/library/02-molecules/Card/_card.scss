@@ -1,3 +1,23 @@
 .card {
+  padding: 1.8rem;
+  border-radius: .25rem;
+  box-shadow: $shadow-bottom;
+  width: 100%;
+  max-width: 20rem;
 
+  .card__heading--subheading {
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
+    font-size: $font-size-lead;
+  }
+
+  .rich-text {
+    margin-top: 1rem;
+  }
 }
+
+.card.card-border--main { border: 1px solid $color--main; }
+.card.card-border--secondary { border: 1px solid $color--secondary; }
+.card.card-border--complementary { border: 1px solid $color--complementary; }
+.card.card-border--dark { border: 1px solid $color--dark; }
+.card.card-border--light { border: 1px solid $color--light; }

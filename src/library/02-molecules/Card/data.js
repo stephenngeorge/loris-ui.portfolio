@@ -13,6 +13,7 @@
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  borderColor: "secondary",
   cardHeading: "This is a card",
   cardSubHeading: "Test the subheading field"
 }

@@ -13,11 +13,16 @@ import { Heading, RichText } from '../../01-atoms'
 
 const Card = ({
   additionalClasses,
+  borderColor,
   cardHeading,
   cardSubHeading,
   children
 }) => {
-  const classes = ["card", ...additionalClasses]
+  const classes = [
+    "card",
+    `card-border--${borderColor}`,
+    ...additionalClasses
+  ]
   return (
     <div className={`${classes.join(" ")}`}>
       {
@@ -39,12 +44,14 @@ const Card = ({
 
 Card.propTypes = {
   additionalClasses: PropTypes.array,
+  borderColor: PropTypes.string,
   cardHeading: PropTypes.string,
   cardSubHeading: PropTypes.string
 }
 
 Card.defaultProps = {
-  additionalClasses: []
+  additionalClasses: [],
+  borderColor: "secondary"
 }
 
 export default Card
