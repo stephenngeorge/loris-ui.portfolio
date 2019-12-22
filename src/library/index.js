@@ -1,6 +1,7 @@
 import {
   Button,
   Heading,
+  Icon,
   RichText,
   Title
 } from "./01-atoms"
@@ -17,12 +18,14 @@ import {
   CardBlock
 } from "./03-organisms"
 
+
 export {
   Button,
   ButtonRow,
   Card,
   CardBlock,
   Heading,
+  Icon,
   IconsList,
   RichText,
   SideNav,
