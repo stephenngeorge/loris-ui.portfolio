@@ -1,0 +1,24 @@
+.card-block {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2rem;
+
+  .card {
+    margin: 1rem;
+    max-width: 100% !important;
+    min-width: 15rem;
+    flex-grow: 1;
+  }
+}
+
+@for $i from 2 through 4 {
+  .card-block.card-block--row-#{$i} .card {
+    width: (96% / $i) - $i;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .card-block.card-block--bg-#{$color} { background-color: rgba($value, .2); }
+}
+// set background for extra colours (grey does not appear in theme-colors
+.card-block.card-block--bg-grey { background-color: rgba($color--grey, 1); }

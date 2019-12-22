@@ -13,17 +13,45 @@ import { Heading, RichText } from '../../01-atoms'
 
 const Card = ({
   additionalClasses,
+  backgroundColor,
   borderColor,
   cardHeading,
   cardSubHeading,
   children
 }) => {
+  const validateCard = (backgroundColor, borderColor) => {
+    let errors = []
+
+    if (["main", "secondary", "complementary", "light", "dark"].indexOf(backgroundColor) < 0) {
+      errors.push({
+        type: "VALUE OUT OF RANGE",
+        source: "Card > props.backgroundColor",
+        message: "backgroundColor must be one of 'main' | 'secondary' | 'complementary' | 'light' | 'dark'. These correspond to sass variables"
+      })
+    }
+
+    if (["main", "secondary", "complementary", "light", "dark"].indexOf(borderColor) < 0) {
+      errors.push({
+        type: "VALUE OUT OF RANGE",
+        source: "Card > props.backgroundColor",
+        message: "backgroundColor must be one of 'main' | 'secondary' | 'complementary' | 'light' | 'dark'. These correspond to sass variables"
+      })
+    }
+
+    for (const error of errors) {
+      console.warn(`${error.type}: ${error.source}\n${error.message}`)
+    }
+
+    return errors
+  }
+
   const classes = [
     "card",
+    `card-background--${backgroundColor}`,
     `card-border--${borderColor}`,
     ...additionalClasses
   ]
-  return (
+  return validateCard(backgroundColor, borderColor).length > 0 ? null : (
     <div className={`${classes.join(" ")}`}>
       {
         !!cardHeading &&
@@ -44,6 +72,7 @@ const Card = ({
 
 Card.propTypes = {
   additionalClasses: PropTypes.array,
+  backgroundColor: PropTypes.string,
   borderColor: PropTypes.string,
   cardHeading: PropTypes.string,
   cardSubHeading: PropTypes.string
@@ -51,6 +80,7 @@ Card.propTypes = {
 
 Card.defaultProps = {
   additionalClasses: [],
+  backgroundColor: "light",
   borderColor: "secondary"
 }
 

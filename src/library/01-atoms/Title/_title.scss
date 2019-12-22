@@ -16,8 +16,8 @@
 }
 
 // set colour for all underline-color classes
-.title.underline-color--main::after { background-color: rgba($color--main, .4); }
-.title.underline-color--secondary::after { background-color: rgba($color--secondary, .4); }
-.title.underline-color--complementary::after { background-color: rgba($color--complementary, .4); }
-.title.underline-color--dark::after { background-color: rgba($color--dark, .4); }
-.title.underline-color--light::after { background-color: rgba($color--light, .4); }
+@each $color, $value in $theme-colors {
+  .title.underline-color--#{$color}::after {
+    background-color: rgba($value, .4);
+  }
+}

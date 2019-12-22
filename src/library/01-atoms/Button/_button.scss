@@ -14,40 +14,14 @@
   width: 100%;
 }
 
-// set border color and hover states
-.button.button-border--main {
-  border-color: $color--main;
-  @include button-border-handler($color--main);
-}
-.button.button-border--complementary {
-  border-color: $color--complementary;
-  @include button-border-handler($color--complementary);
-}
-.button.button-border--secondary {
-  border-color: $color--secondary;
-  @include button-border-handler($color--secondary);
-}
-.button.button-border--dark {
-  border-color: $color--dark;
-  @include button-border-handler($color--dark);
-}
-.button.button-border--light {
-  border-color: $color--light;
-  @include button-border-handler($color--light);
-}
+@each $color, $value in $theme-colors {
+  // set border color and hover states
+  .button.button-border--#{$color} {
+    border-color: $value;
+    @include button-border-handler($value);
+  }
 
-// set background color and hover states
-.button.bg--main { @include button-bg-handler($color--main); }
-.button.bg--main.button--outline { @include button-bg-handler($color--main, true); }
-
-.button.bg--complementary { @include button-bg-handler($color--complementary); }
-.button.bg--complementary.button--outline { @include button-bg-handler($color--complementary, true); }
-
-.button.bg--secondary { @include button-bg-handler($color--secondary); }
-.button.bg--secondary.button--outline { @include button-bg-handler($color--secondary, true); }
-
-.button.bg--dark { @include button-bg-handler($color--dark); }
-.button.bg--dark.button--outline { @include button-bg-handler($color--dark, true); }
-
-.button.bg--light { @include button-bg-handler($color--light); }
-.button.bg--light.button--outline { @include button-bg-handler($color--light, true); }
+  // set background color and hover states
+  .button.bg--#{$color} { @include button-bg-handler($value); }
+  .button.bg--#{$color}.button--outline { @include button-bg-handler($value, true); }
+}

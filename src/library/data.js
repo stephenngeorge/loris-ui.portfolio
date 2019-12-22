@@ -15,6 +15,9 @@ import { data as IconsListData } from './02-molecules/IconsList/data'
 import { data as SideNavData } from './02-molecules/SideNav/data'
 import { data as TextSectionData } from './02-molecules/TextSection/data'
 
+// import data objects from 03-organisms
+import { data as CardBlockData } from './03-organisms/CardBlock/data'
+
 export {
   ButtonData,
   HeadingData,
@@ -24,5 +27,6 @@ export {
   CardData,
   IconsListData,
   SideNavData,
-  TextSectionData
+  TextSectionData,
+  CardBlockData
 }

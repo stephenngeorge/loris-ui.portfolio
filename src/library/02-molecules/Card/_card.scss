@@ -16,8 +16,7 @@
   }
 }
 
-.card.card-border--main { border: 1px solid $color--main; }
-.card.card-border--secondary { border: 1px solid $color--secondary; }
-.card.card-border--complementary { border: 1px solid $color--complementary; }
-.card.card-border--dark { border: 1px solid $color--dark; }
-.card.card-border--light { border: 1px solid $color--light; }
+@each $color, $value in $theme-colors {
+  .card.card-background--#{$color} { background-color: $value; }
+  .card.card-border--#{$color} { border: 1px solid $value; }
+}

@@ -13,10 +13,15 @@ import {
   TextSection
 } from "./02-molecules"
 
+import {
+  CardBlock
+} from "./03-organisms"
+
 export {
   Button,
   ButtonRow,
   Card,
+  CardBlock,
   Heading,
   IconsList,
   RichText,

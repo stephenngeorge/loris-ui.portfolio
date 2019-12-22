@@ -13,8 +13,9 @@
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
-  headingText: "This is a title",
-  underlineColor: "dark"
+  backgroundColor: "grey",
+  rowContains: 2,
+  wrapOn: "row"
 }
 
 export {
