@@ -10,6 +10,7 @@ import {
   ButtonRow,
   Card,
   IconsList,
+  PageNav,
   SideNav,
   TextSection
 } from "./02-molecules"
@@ -27,6 +28,7 @@ export {
   Heading,
   Icon,
   IconsList,
+  PageNav,
   RichText,
   SideNav,
   TextSection,

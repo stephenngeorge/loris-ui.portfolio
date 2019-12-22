@@ -1,0 +1,33 @@
+.page-nav__link {
+  position: relative;
+  margin: 0 1rem;
+
+  text-decoration: none;
+  font-family: $font-family-serif;
+  font-weight: $font-weight-heavy;
+  color: $color--dark;
+}
+
+.page-nav__link:focus,
+.page-nav__link:active,
+.page-nav__link:hover {
+  &::after {
+    position: absolute;
+    content: "";
+    // force :after pseudo element to be behind text
+    z-index: -10;
+    width: 108%;
+    height: 50%;
+    // left value is (width - 100) / 2
+    left: -4%;
+    bottom: -.2rem;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .page-nav__link--#{$color}:focus::after,
+  .page-nav__link--#{$color}:active::after,
+  .page-nav__link--#{$color}:hover::after {
+    background-color: rgba($value, .4);
+  }
+}

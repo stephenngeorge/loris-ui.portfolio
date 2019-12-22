@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { Icon } from './library'
-import { IconData } from './library/data'
+import { PageNav } from './library'
+import { PageNavData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <Icon {...IconData} />
+      <PageNav {...PageNavData} />
     </div>
   </Router>
 )
