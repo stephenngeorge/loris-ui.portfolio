@@ -1,4 +1,8 @@
 import {
+  Themer
+} from "./00-protons"
+
+import {
   Button,
   Heading,
   Icon,
@@ -32,5 +36,6 @@ export {
   RichText,
   SideNav,
   TextSection,
+  Themer,
   Title
 }

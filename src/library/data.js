@@ -1,7 +1,6 @@
 // import all data objects for every component 
 // that was created with a data.js file
 
-
 // import data objects from 01-atoms
 import { data as ButtonData } from './01-atoms/Button/data'
 import { data as HeadingData } from './01-atoms/Heading/data'
@@ -21,6 +20,7 @@ import { data as TextSectionData } from './02-molecules/TextSection/data'
 import { data as CardBlockData } from './03-organisms/CardBlock/data'
 
 export {
+  ThemerData,
   ButtonData,
   HeadingData,
   IconData,

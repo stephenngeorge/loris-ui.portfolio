@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { PageNav } from './library'
-import { PageNavData } from './library/data'
+import { Heading } from './library'
 
 const App = () => (
   <Router>
     <div className="App">
-      <PageNav {...PageNavData} />
+      <Heading color="main">
+        <h2>Title</h2>
+      </Heading>
     </div>
   </Router>
 )
