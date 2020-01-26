@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { Icon } from './library'
-import { IconData } from './library/data'
+import { Title } from './library'
+import { TitleData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <Icon { ...IconData } />
+      <Title { ...TitleData } />
     </div>
   </Router>
 )

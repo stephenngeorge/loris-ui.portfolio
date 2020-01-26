@@ -13,7 +13,8 @@
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
-  headingText: "This is a title",
+  titleLevel: 1,
+  titleText: "This is a title",
   underlineColor: "main"
 }
 

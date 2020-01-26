@@ -2,7 +2,7 @@
   position: relative;
   width: fit-content;
 
-  &::after {
+  .underline {
     position: absolute;
     content: "";
     // force :after pseudo element to be behind text
@@ -12,12 +12,6 @@
     // left value is (width - 100) / 2
     left: -4%;
     bottom: -.2rem;
-  }
-}
-
-// set colour for all underline-color classes
-@each $color, $value in $theme-colors {
-  .title.underline-color--#{$color}::after {
-    background-color: rgba($value, .4);
+    opacity: .4;
   }
 }
