@@ -13,6 +13,9 @@
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  color: "main",
+  headingLevel: 2,
+  headingText: "Title"
 }
 
 export {

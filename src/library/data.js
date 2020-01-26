@@ -20,7 +20,6 @@ import { data as TextSectionData } from './02-molecules/TextSection/data'
 import { data as CardBlockData } from './03-organisms/CardBlock/data'
 
 export {
-  ThemerData,
   ButtonData,
   HeadingData,
   IconData,
