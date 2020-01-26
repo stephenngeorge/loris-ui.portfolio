@@ -5,9 +5,11 @@ const borders = {
   /// ----------
   /// css `border-width: $value`
   /// @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
-  borderWidth_thin: ".25rem",
-  borderWidth: ".125rem",
-  borderWidth_thick: ".25rem",
+  width: {
+    thin: "1px",
+    default: ".125rem",
+    thick: ".25rem"
+  },
   /// border-style should be set as a string in the component,
   /// border-color should be set using the theme's colour properties.
   /// *** *** ***
@@ -16,11 +18,13 @@ const borders = {
   /// ----------
   /// css `border-radius: $value`
   /// @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
-  borderRadius_square: ".1rem",
-  borderRadius: ".25rem",
-  borderRadius_round: "50%",
-  // this can be used to force a rounded corner in some situations
-  borderRadius_force_round: "999px"
+  radius: {
+    square: ".1rem",
+    default: ".25rem",
+    round: "50%",
+    // this can be used to force a rounded corner in some situations
+    force_round: "999px"
+  }
 }
 
 const colors = {
@@ -38,9 +42,32 @@ const colors = {
   light: "#FFFFFF"
 }
 
+const fonts = {
+  /// ----------
+  /// FONT SIZES
+  /// ----------
+  /// css `font-size: $value`
+  /// @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+  sizes: {
+    small: ".8rem",
+    default: "1rem",
+    lead: "1.4rem"
+  },
+  /// ----------
+  /// FONT FAMILIES
+  /// ----------
+  /// css `font-fmaily: $value`
+  /// @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+  families: {
+    sans_serif: "'Open Sans', sans-serif",
+    serif: "'Roboto Slab', serif"
+  }
+}
+
 const defaultTheme = {
   borders,
-  colors
+  colors,
+  fonts
 }
 
 export default defaultTheme

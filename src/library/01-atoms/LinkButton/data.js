@@ -13,6 +13,16 @@
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  buttonBlock: false,
+  buttonBorderColor: "main",
+  buttonBgColor: "main",
+  buttonColor: "light",
+  buttonLarge: false,
+  buttonLink: "/",
+  buttonLinkVariation: "internal",
+  buttonOutline: true,
+  buttonText: "Click me",
+  buttonType: "a"
 }
 
 export {

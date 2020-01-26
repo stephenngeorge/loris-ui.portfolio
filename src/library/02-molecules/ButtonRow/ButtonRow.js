@@ -13,7 +13,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { Button } from '../../01-atoms'
+import { LinkButton } from '../../01-atoms'
 
 const ButtonRow = ({
   additionalClasses,
@@ -28,7 +28,7 @@ const ButtonRow = ({
           buttons.map((button, i) => {
             return (
               <li>
-                <Button key={ i } buttonColor={ rowColor } buttonBorderColor={ rowColor } { ...button } />
+                <LinkButton key={ i } buttonColor={ rowColor } buttonBorderColor={ rowColor } { ...button } />
               </li>
             )
           })

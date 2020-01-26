@@ -3,9 +3,9 @@ import {
 } from "./00-protons"
 
 import {
-  Button,
   Heading,
   Icon,
+  LinkButton,
   RichText,
   Title
 } from "./01-atoms"
@@ -25,13 +25,13 @@ import {
 
 
 export {
-  Button,
   ButtonRow,
   Card,
   CardBlock,
   Heading,
   Icon,
   IconsList,
+  LinkButton,
   PageNav,
   RichText,
   SideNav,

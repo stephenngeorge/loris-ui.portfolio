@@ -2,9 +2,9 @@
 // that was created with a data.js file
 
 // import data objects from 01-atoms
-import { data as ButtonData } from './01-atoms/Button/data'
 import { data as HeadingData } from './01-atoms/Heading/data'
 import { data as IconData } from './01-atoms/Icon/data'
+import { data as LinkButtonData } from './01-atoms/LinkButton/data'
 import { data as RichTextData } from './01-atoms/RichText/data'
 import { data as TitleData } from './01-atoms/Title/data'
 
@@ -20,9 +20,9 @@ import { data as TextSectionData } from './02-molecules/TextSection/data'
 import { data as CardBlockData } from './03-organisms/CardBlock/data'
 
 export {
-  ButtonData,
   HeadingData,
   IconData,
+  LinkButtonData,
   RichTextData,
   TitleData,
   ButtonRowData,
