@@ -49,9 +49,9 @@ const Heading = ({
       })
     }
 
-    errors.forEach(error => {
+    for (const error of errors) {
       console.warn(`${error.type}: ${error.source}\n${error.message}`)
-    })
+    }
     return errors
   }
 

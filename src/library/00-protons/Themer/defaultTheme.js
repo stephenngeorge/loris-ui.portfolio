@@ -64,12 +64,25 @@ const fontSizes = {
   lead: "1.4rem"
 }
 
+/// *** *** ***
+/// ----------
+/// VARIABLES
+/// ----------
+const iconSizes = {
+  xs: "1rem",
+  sm: "1.6rem",
+  md: "2.4rem",
+  lg: "3.5rem",
+  xl: "5rem"
+}
+
 const defaultTheme = {
   borderRadius,
   borderWidth,
   colors,
   fontFamilies,
-  fontSizes
+  fontSizes,
+  iconSizes
 }
 
 export default defaultTheme

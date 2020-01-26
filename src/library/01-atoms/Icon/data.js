@@ -19,7 +19,8 @@ const data = {
     name: "Clock icon",
     src: clock_icon
   },
-  size: "xl"
+  size: "sm",
+  url: "https://google.co.uk"
 }
 
 export {
