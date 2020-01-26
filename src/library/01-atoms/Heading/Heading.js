@@ -18,12 +18,14 @@ const Heading = ({
   additionalClasses,
   color,
   headingLevel,
-  headingText
+  headingText,
+  scopedStyles
 }) => {
   // consume theme and set styles
   const theme = useContext(ThemeContext)
   const headingStyles = {
-    color: theme.colors[color]
+    color: theme.colors[color],
+    ...scopedStyles
   }
 
   // validate props, checks for a headingLevel between
@@ -71,12 +73,14 @@ Heading.propTypes = {
   additionalClasses: PropTypes.array,
   color: PropTypes.string,
   headingLevel: PropTypes.number, // <-- between 1 - 6
-  headingText: PropTypes.string.isRequired
+  headingText: PropTypes.string.isRequired,
+  scopedStyles: PropTypes.object
 }
 
 Heading.defaultProps = {
   additionalClasses: [],
-  color: 'dark'
+  color: 'dark',
+  scopedStyles: {}
 }
 
 export default Heading

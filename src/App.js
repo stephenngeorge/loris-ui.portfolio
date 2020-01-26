@@ -7,7 +7,7 @@ import { LinkButtonData } from './library/data'
 const App = () => (
   <Router>
     <div className="App">
-      <LinkButton { ...LinkButtonData } scopedStyles={{ minWidth: "12rem" }} />
+      <LinkButton { ...LinkButtonData } />
     </div>
   </Router>
 )

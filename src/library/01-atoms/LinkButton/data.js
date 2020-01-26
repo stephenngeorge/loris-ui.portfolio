@@ -20,7 +20,7 @@ const data = {
   buttonLarge: false,
   buttonLink: "/",
   buttonLinkVariation: "internal",
-  buttonOutline: true,
+  buttonOutline: false,
   buttonText: "Click me",
   buttonType: "a"
 }

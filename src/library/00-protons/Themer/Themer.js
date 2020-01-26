@@ -17,7 +17,28 @@ const Themer = ({
   children,
   theme
 }) => {
-  const setTheme = {...defaultTheme, ...theme}
+  const setTheme = {
+    borderRadius: {
+      ...defaultTheme.borderRadius,
+      ...theme.borderRadius
+    },
+    borderWidth: {
+      ...defaultTheme.borderWidth,
+      ...theme.borderWidth
+    },
+    colors: {
+      ...defaultTheme.colors,
+      ...theme.colors
+    },
+    fontFamilies: {
+      ...defaultTheme.fontFamilies,
+      ...theme.fontFamilies
+    },
+    fontSizes: {
+      ...defaultTheme.fontSizes,
+      ...theme.fontSizes
+    }
+  }
   
   return (
     <ThemeContext.Provider value={ setTheme }>

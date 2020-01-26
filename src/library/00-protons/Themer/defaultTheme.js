@@ -1,31 +1,31 @@
-const borders = {
-  /// *** *** ***
-  /// ----------
-  /// BORDER WIDTH
-  /// ----------
-  /// css `border-width: $value`
-  /// @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
-  width: {
-    thin: "1px",
-    default: ".125rem",
-    thick: ".25rem"
-  },
-  /// border-style should be set as a string in the component,
-  /// border-color should be set using the theme's colour properties.
-  /// *** *** ***
-  /// ----------
-  /// BORDER RADIUS
-  /// ----------
-  /// css `border-radius: $value`
-  /// @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
-  radius: {
-    square: ".1rem",
-    default: ".25rem",
-    round: "50%",
-    // this can be used to force a rounded corner in some situations
-    force_round: "999px"
-  }
+
+/// *** *** ***
+/// ----------
+/// BORDER RADIUS
+/// ----------
+/// css `border-radius: $value`
+/// @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+const borderRadius = {
+  square: ".1rem",
+  default: ".25rem",
+  round: "50%",
+  // this can be used to force a rounded corner in some situations
+  force_round: "999px"
 }
+/// *** *** ***
+/// ----------
+/// BORDER WIDTH
+/// ----------
+/// css `border-width: $value`
+/// @see https://developer.mozilla.org/en-US/docs/Web/CSS/border-width
+const borderWidth = {
+  thin: "1px",
+  default: ".125rem",
+  thick: ".25rem"
+}
+/// border-style should be set as a string in the component,
+  /// border-color should be set using the theme's colour properties.
+
 
 const colors = {
   /// ----------
@@ -42,32 +42,34 @@ const colors = {
   light: "#FFFFFF"
 }
 
-const fonts = {
-  /// ----------
-  /// FONT SIZES
-  /// ----------
-  /// css `font-size: $value`
-  /// @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
-  sizes: {
-    small: ".8rem",
-    default: "1rem",
-    lead: "1.4rem"
-  },
-  /// ----------
-  /// FONT FAMILIES
-  /// ----------
-  /// css `font-fmaily: $value`
-  /// @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
-  families: {
-    sans_serif: "'Open Sans', sans-serif",
-    serif: "'Roboto Slab', serif"
-  }
+/// *** *** ***
+/// ----------
+/// FONT FAMILIES
+/// ----------
+/// css `font-fmaily: $value`
+/// @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
+const fontFamilies = {
+  sans_serif: "'Open Sans', sans-serif",
+  serif: "'Roboto Slab', serif"
+}
+/// *** *** ***
+/// ----------
+/// FONT SIZES
+/// ----------
+/// css `font-size: $value`
+/// @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+const fontSizes = {
+  small: ".8rem",
+  default: "1rem",
+  lead: "1.4rem"
 }
 
 const defaultTheme = {
-  borders,
+  borderRadius,
+  borderWidth,
   colors,
-  fonts
+  fontFamilies,
+  fontSizes
 }
 
 export default defaultTheme

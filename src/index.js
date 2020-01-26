@@ -8,7 +8,11 @@ import { Themer } from './library'
 import * as serviceWorker from './serviceWorker'
 
 render(
-  <Themer theme={{ backgroundColor: '#FFA500' }}>
+  <Themer theme={{
+    colors: {
+      main: "#6CA4C8"
+    }
+  }}>
     <App />
   </Themer>, document.getElementById('root'))
 

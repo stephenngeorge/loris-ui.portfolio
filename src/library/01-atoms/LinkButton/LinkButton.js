@@ -31,16 +31,36 @@ const Button = ({
   scopedStyles
 }) => {
   // consume theme and set styles
-  const { borders, colors, fonts } = useContext(ThemeContext)
+  const { borderRadius, colors, fontFamilies, fontSizes } = useContext(ThemeContext)
   const buttonStyles = {
     backgroundColor: buttonOutline ? "transparent" : colors[buttonBgColor],
     border: `.125rem solid ${colors[buttonBorderColor]}`,
-    borderRadius: borders.radius.default,
+    borderRadius: borderRadius.default,
     color: buttonOutline ? colors[buttonBgColor] : colors[buttonColor],
-    fontFamily: fonts.families.serif,
-    fontSize: buttonLarge ? fonts.sizes.default : fonts.sizes.lead,
-    transition: "background-color .3s ease, color .3s ease",
+    fontFamily: fontFamilies.serif,
+    fontSize: buttonLarge ? fontSizes.lead : fontSizes.default,
+    transition: "background-color .3s ease, color .3s ease, filter .3s ease",
     ...scopedStyles
+  }
+  // programtically handle hover styles
+  const hoverStyles = e => {
+    switch (e.type) {
+      case "mouseleave":
+        if (buttonOutline) {
+          e.target.style.backgroundColor = "transparent"
+          e.target.style.color = colors[buttonBgColor]
+        }
+        else e.target.style.filter = "saturate(100%)"
+        break
+      case "mouseenter":
+      default:
+        if (buttonOutline) {
+          e.target.style.backgroundColor = colors[buttonBgColor]
+          e.target.style.color = colors[buttonColor]
+        }
+        else e.target.style.filter = "saturate(150%)"
+    }
+    
   }
 
   // validate buttonText (check it's not empty)
@@ -72,11 +92,21 @@ const Button = ({
   // render button if there are no errors
   return isValidButton(buttonText).length > 0 ? null :
     buttonLinkVariation === "internal" ? (
-    <Link to={ buttonLink } style={ buttonStyles } className={`${classes.join(" ")}`}>
+    <Link onMouseEnter={hoverStyles}
+          onMouseLeave={hoverStyles}
+          to={ buttonLink }
+          style={ buttonStyles }
+          className={`${classes.join(" ")}`}
+    >
       { buttonText }
     </Link>
   ) : (
-    <a href={ buttonLink } style={ buttonStyles } className={`${classes.join(" ")}`}>
+    <a  onMouseEnter={hoverStyles}
+        onMouseLeave={hoverStyles}
+        href={ buttonLink }
+        style={ buttonStyles }
+        className={`${classes.join(" ")}`}
+    >
       { buttonText }
     </a>
   )
@@ -101,6 +131,7 @@ Button.defaultProps = {
   buttonBlock: false,
   buttonBorderColor: 'main',
   buttonBgColor: 'main',
+  buttonColor: 'light',
   buttonLarge: false,
   buttonLink: "https://google.co.uk",
   buttonLinkVariation: 'internal',
