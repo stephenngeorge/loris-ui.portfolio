@@ -33,7 +33,7 @@ const LinkButton = ({
   // consume theme and set styles
   const { borderRadius, colors, fontFamilies, fontSizes } = useContext(ThemeContext)
   const buttonStyles = {
-    backgroundColor: buttonOutline ? "transparent" : colors[buttonBgColor],
+    backgroundColor: buttonOutline ? "#fff" : colors[buttonBgColor],
     border: `.125rem solid ${colors[buttonBorderColor]}`,
     borderRadius: borderRadius.default,
     color: buttonOutline ? colors[buttonBgColor] : colors[buttonColor],
@@ -47,7 +47,7 @@ const LinkButton = ({
     switch (e.type) {
       case "mouseleave":
         if (buttonOutline) {
-          e.target.style.backgroundColor = "transparent"
+          e.target.style.backgroundColor = "#ffffff"
           e.target.style.color = colors[buttonBgColor]
         }
         else e.target.style.filter = "saturate(100%)"

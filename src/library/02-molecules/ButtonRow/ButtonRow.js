@@ -10,30 +10,42 @@
  * are accepted by the button atom.
  */
 
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 
 import { LinkButton } from '../../01-atoms'
 
+import { ThemeContext } from '../../00-protons/Themer/Themer'
+
 const ButtonRow = ({
   additionalClasses,
   buttons,
-  rowColor
+  rowColor,
+  scopedStyles
 }) => {
+  // consume theme and set styles
+  const { colors } = useContext(ThemeContext)
+  const underlineStyles = {
+    borderBottom: `2px solid ${colors[rowColor]}`
+  }
+  const styles = { ...scopedStyles }
+
   const classes = ["button-row", ...additionalClasses]
   return (
-    <div className={`${classes.join(" ")}`}>
+    <div style={ styles } className={`${classes.join(" ")}`}>
       <ul className="button-row--list">
         {
           buttons.map((button, i) => {
             return (
-              <li>
-                <LinkButton key={ i } buttonColor={ rowColor } buttonBorderColor={ rowColor } { ...button } />
+              <li key={ i }>
+                <LinkButton buttonBgColor={ rowColor } buttonBorderColor={ rowColor } buttonB { ...button } />
               </li>
             )
           })
         }
       </ul>
+
+      <div style={ underlineStyles } className="underline"></div>
     </div>
   )
 }
@@ -41,12 +53,14 @@ const ButtonRow = ({
 ButtonRow.propTypes = {
   additionalClasses: PropTypes.array,
   buttons: PropTypes.array.isRequired,
-  rowColor: PropTypes.string
+  rowColor: PropTypes.string,
+  scopedStyles: PropTypes.object
 }
 
 ButtonRow.defaultProps = {
   additionalClasses: [],
-  rowColor: 'main'
+  rowColor: 'main',
+  scopedStyles: {}
 }
 
 export default ButtonRow
