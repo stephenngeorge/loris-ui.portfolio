@@ -3,6 +3,7 @@ import {
 } from "./00-protons"
 
 import {
+  CoverImage,
   Heading,
   Icon,
   LinkButton,
@@ -28,6 +29,7 @@ export {
   ButtonRow,
   Card,
   CardBlock,
+  CoverImage,
   Heading,
   Icon,
   IconsList,
