@@ -17,6 +17,7 @@ import { ThemeContext } from '../../00-protons/Themer/Themer'
 
 const Title = ({
   additionalClasses,
+  scopedStyles,
   titleLevel,
   titleText,
   underlineColor
@@ -26,6 +27,7 @@ const Title = ({
   const underlineStyles = {
     backgroundColor: colors[underlineColor]
   }
+  const styles = { ...scopedStyles }
   // validate title, checks titleLevel is within range and that titleText is not
   // an empty string.
   const isValidTitle = (titleLevel, titleText) => {
@@ -60,7 +62,7 @@ const Title = ({
 
   const HTMLTag = `h${titleLevel}`
   return isValidTitle(titleLevel, titleText).length > 0 ? null : (
-    <HTMLTag className={`${classes.join(" ")}`}>
+    <HTMLTag style={ styles } className={`${classes.join(" ")}`}>
       { titleText }
       <div style={ underlineStyles } className="underline"></div>
     </HTMLTag>
@@ -69,6 +71,7 @@ const Title = ({
 
 Title.propTypes = {
   additionalClasses: PropTypes.array,
+  scopedStyles: PropTypes.object,
   titleLevel: PropTypes.number,
   titleText: PropTypes.string.isRequired,
   underlineColor: PropTypes.string
@@ -76,6 +79,7 @@ Title.propTypes = {
 
 Title.defaultProps = {
   additionalClasses: [],
+  scopedStyles: {},
   titleLevel: 1,
   underlineColor: "main"
 }

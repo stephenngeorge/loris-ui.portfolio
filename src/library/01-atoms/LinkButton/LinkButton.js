@@ -17,7 +17,7 @@ import * as errorTypes from '../../errorTypes'
 
 import { ThemeContext } from "../../00-protons/Themer/Themer"
 
-const Button = ({
+const LinkButton = ({
   additionalClasses,
   buttonBlock,
   buttonBorderColor,
@@ -112,7 +112,7 @@ const Button = ({
   )
 }
 
-Button.propTypes = {
+LinkButton.propTypes = {
   additionalClasses: PropTypes.array,
   buttonBlock: PropTypes.bool,
   buttonBorderColor: PropTypes.string,
@@ -126,7 +126,7 @@ Button.propTypes = {
   scopedStyles: PropTypes.object
 }
 
-Button.defaultProps = {
+LinkButton.defaultProps = {
   additionalClasses: [],
   buttonBlock: false,
   buttonBorderColor: 'main',
@@ -141,4 +141,4 @@ Button.defaultProps = {
   scopedStyles: {}
 }
 
-export default Button
+export default LinkButton

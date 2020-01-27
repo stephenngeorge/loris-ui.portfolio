@@ -14,22 +14,26 @@ import PropTypes from "prop-types"
 
 const RichText = ({
   additionalClasses,
-  children
+  children,
+  scopedStyles
 }) => {
+  const styles = { ...scopedStyles }
   const classes = ["rich-text", ...additionalClasses]
   return (
-    <div className={`${classes.join(" ")}`}>
+    <div style={ styles } className={`${classes.join(" ")}`}>
       {children}
     </div>
   )
 }
 
 RichText.propTypes = {
-  additionalClasses: PropTypes.array
+  additionalClasses: PropTypes.array,
+  scopedStyles: PropTypes.object
 }
 
 RichText.defaultProps = {
-  additionalClasses: []
+  additionalClasses: [],
+  scopedStyles: {}
 }
 
 export default RichText

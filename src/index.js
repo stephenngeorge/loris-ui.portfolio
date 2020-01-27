@@ -10,7 +10,9 @@ import * as serviceWorker from './serviceWorker'
 render(
   <Themer theme={{
     colors: {
-      main: "#6CA4C8"
+      main: "#6CA4C8",
+      secondary: "#B88A9F",
+      dark: "#121F1F"
     }
   }}>
     <App />

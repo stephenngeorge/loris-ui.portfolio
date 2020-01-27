@@ -17,6 +17,7 @@ import { ThemeContext } from '../../00-protons/Themer/Themer'
 const Icon = ({
   additionalClasses,
   icon,
+  scopedStyles,
   size,
   url
 }) => {
@@ -24,7 +25,8 @@ const Icon = ({
   const { iconSizes } = useContext(ThemeContext)
   const imageStyles = {
     width: iconSizes[size],
-    height: iconSizes[size]
+    height: iconSizes[size],
+    ...scopedStyles
   }
 
   // validate icon, checks size is one of the allowed values
@@ -66,12 +68,14 @@ const Icon = ({
 Icon.propTypes = {
   additionalClasses: PropTypes.array,
   icon: PropTypes.object,
+  scopedStyles: PropTypes.object,
   size: PropTypes.string,
   url: PropTypes.string
 }
 
 Icon.defaultProps = {
   additionalClasses: [],
+  scopedStyles: {},
   size: "sm",
   url: ""
 }
