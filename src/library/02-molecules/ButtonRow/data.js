@@ -14,6 +14,7 @@ const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
   rowColor: "secondary",
+  rowWidth: "very-narrow",
   buttons: [
     {
       buttonLink: "https://google.co.uk",
