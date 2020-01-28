@@ -24,15 +24,15 @@ const borderWidth = {
   thick: ".25rem"
 }
 /// border-style should be set as a string in the component,
-  /// border-color should be set using the theme's colour properties.
+/// border-color should be set using the theme's colour properties.
 
-
+/// *** *** ***
+/// ----------
+/// COLORS
+/// ----------
+/// Generic color definitions, to used for:
+/// css `color: $value`, `background-color: $value`, `box-shadow: ... ... ... ... $value` etc
 const colors = {
-  /// ----------
-  /// COLORS
-  /// ----------
-  /// Generic color definitions, to used for:
-  /// css `color: $value`, `background-color: $value`, `box-shadow: ... ... ... ... $value` etc
   main: "#71BC78",
   complementary: "#BC7871",
   secondary: "#779AAD",
@@ -61,7 +61,18 @@ const fontFamilies = {
 const fontSizes = {
   small: ".8rem",
   default: "1rem",
-  lead: "1.4rem"
+  lead: "1.2rem"
+}
+/// *** *** ***
+/// ----------
+/// FONT WEIGHTS
+/// ----------
+/// css `font-weight: $value`
+/// @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+const fontWeights = {
+  light: 300,
+  default: 400,
+  heavy: 700
 }
 
 /// *** *** ***
@@ -82,6 +93,7 @@ const defaultTheme = {
   colors,
   fontFamilies,
   fontSizes,
+  fontWeights,
   iconSizes
 }
 

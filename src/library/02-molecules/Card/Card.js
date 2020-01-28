@@ -6,10 +6,12 @@
  * Comment block, describe your component here
  */
 
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 
 import { Heading, RichText } from '../../01-atoms'
+
+import { ThemeContext } from '../../00-protons/Themer/Themer'
 
 const Card = ({
   additionalClasses,
@@ -17,32 +19,23 @@ const Card = ({
   borderColor,
   cardHeading,
   cardSubHeading,
-  children
+  children,
+  scopedStyles
 }) => {
-  const validateCard = (backgroundColor, borderColor) => {
-    let errors = []
+  // consume theme and set styles
+  const {
+    borderWidth,
+    borderRadius,
+    colors,
+    fontFamilies,
+    fontWeights
+  } = useContext(ThemeContext)
 
-    if (["main", "secondary", "complementary", "light", "dark"].indexOf(backgroundColor) < 0) {
-      errors.push({
-        type: "VALUE OUT OF RANGE",
-        source: "Card > props.backgroundColor",
-        message: "backgroundColor must be one of 'main' | 'secondary' | 'complementary' | 'light' | 'dark'. These correspond to sass variables"
-      })
-    }
-
-    if (["main", "secondary", "complementary", "light", "dark"].indexOf(borderColor) < 0) {
-      errors.push({
-        type: "VALUE OUT OF RANGE",
-        source: "Card > props.backgroundColor",
-        message: "backgroundColor must be one of 'main' | 'secondary' | 'complementary' | 'light' | 'dark'. These correspond to sass variables"
-      })
-    }
-
-    for (const error of errors) {
-      console.warn(`${error.type}: ${error.source}\n${error.message}`)
-    }
-
-    return errors
+  const styles = {
+    backgroundColor: colors[backgroundColor],
+    border: `${borderWidth.thin} solid ${colors[borderColor]}`,
+    borderRadius: borderRadius.default,
+    ...scopedStyles
   }
 
   const classes = [
@@ -51,17 +44,22 @@ const Card = ({
     `card-border--${borderColor}`,
     ...additionalClasses
   ]
-  return validateCard(backgroundColor, borderColor).length > 0 ? null : (
-    <div className={`${classes.join(" ")}`}>
+  return (
+    <div style={ styles } className={`${classes.join(" ")}`}>
       {
         !!cardHeading &&
-        <Heading>
-          <h3 className="card__header--heading">{ cardHeading }</h3>
-          {
-            !!cardSubHeading &&
-            <h4 className="card__heading--subheading">{ cardSubHeading }</h4>
-          }
-        </Heading>
+        <Heading headingLevel={ 3 } headingText={ cardHeading } />
+      }
+      {
+        !!cardSubHeading &&
+        <Heading
+          headingLevel={ 4 }
+          headingText={ cardSubHeading }
+          scopedStyles={{
+            fontFamily: fontFamilies.sans_serif,
+            fontWeight: fontWeights.normal
+          }}
+        />
       }
       <RichText>
         { children }
@@ -75,13 +73,15 @@ Card.propTypes = {
   backgroundColor: PropTypes.string,
   borderColor: PropTypes.string,
   cardHeading: PropTypes.string,
-  cardSubHeading: PropTypes.string
+  cardSubHeading: PropTypes.string,
+  scopedStyles: PropTypes.object
 }
 
 Card.defaultProps = {
   additionalClasses: [],
   backgroundColor: "light",
-  borderColor: "secondary"
+  borderColor: "secondary",
+  scopedStyles: {}
 }
 
 export default Card

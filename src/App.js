@@ -1,13 +1,15 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { CoverImage } from './library'
-import { CoverImageData } from './library/data'
+import { Card } from './library'
+import { CardData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <CoverImage { ...CoverImageData } />
+      <Card { ...CardData }>
+        <p>This is the body of the card</p>
+      </Card>
     </div>
   </Router>
 )

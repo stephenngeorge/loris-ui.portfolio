@@ -22,9 +22,11 @@ const Heading = ({
   scopedStyles
 }) => {
   // consume theme and set styles
-  const theme = useContext(ThemeContext)
+  const { colors, fontFamilies, fontWeights } = useContext(ThemeContext)
   const headingStyles = {
-    color: theme.colors[color],
+    color: colors[color],
+    fontFamily: fontFamilies.serif,
+    fontWeight: fontWeights.heavy,
     ...scopedStyles
   }
 

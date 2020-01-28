@@ -38,6 +38,10 @@ const Themer = ({
       ...defaultTheme.fontSizes,
       ...theme.fontSizes
     },
+    fontWeights: {
+      ...defaultTheme.fontWeights,
+      ...theme.fontWeights
+    },
     iconSizes: {
       ...defaultTheme.iconSizes,
       ...theme.iconSizes
