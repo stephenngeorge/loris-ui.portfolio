@@ -5,11 +5,6 @@
   img { width: 100%; }
 }
 
-.icons-list.icons--lg img { max-width: 5rem; }
-.icons-list.icons--md img { max-width: 3.6rem; }
-.icons-list.icons--sm img { max-width: 2.5rem; }
-.icons-list.icons--xs img { max-width: 1.4rem; }
-
 .icons-list.icons-list--column {
   flex-direction: column;
   li {

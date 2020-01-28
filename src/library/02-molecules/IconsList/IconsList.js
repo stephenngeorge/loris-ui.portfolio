@@ -7,38 +7,34 @@
  * that are wrapped as in links.
  * Each icon in the props.icons should be an object of shape:
  * {
- * ..icon.name: String,
- * ..icon.link: String (url),
- * ..icon.src: String (file path to svg)
+ * ..name: String,
+ * ..size: String,
+ * ..src: String (file path to svg),
+ * ..url: String (url)
  * }
  */
 
 import React from "react"
 import PropTypes from "prop-types"
 
+import { Icon } from '../../01-atoms'
+
+import * as errorTypes from '../../errorTypes'
+
 const IconsList = ({
   additionalClasses,
   direction,
-  icons,
-  size
+  icons
 }) => {
   
-  const validateList = (direction, size) => {
+  const validateList = (direction) => {
     let errors = []
     
     if (["column", "row", "column-reverse", "row-reverse"].indexOf(direction) < 0) {
       errors.push({
-        type: "VALUE OUT OF RANGE",
+        type: errorTypes.VALUE_OUT_OF_RANGE,
         source: "IconsList > props.direction",
         message: "Direction corresponds to flex direction, and should be one of 'column' | 'row' | 'column-reverse' | 'row-reverse'"
-      })
-    }
-
-    if (["lg", "md", "sm", "xs"].indexOf(size) < 0) {
-      errors.push({
-        type: "VALUE OUT OF RANGE",
-        source: "IconsList > props.size",
-        message: "Size must be one of 'lg' | 'md' | 'sm' | 'xs'"
       })
     }
     
@@ -52,17 +48,14 @@ const IconsList = ({
   const classes = [
     "icons-list",
     `icons-list--${direction}`,
-    `icons--${size}`,
     ...additionalClasses
   ]
-  return validateList(direction, size).length > 0 ? null : (
+  return validateList(direction).length > 0 ? null : (
     <ul className={`${classes.join(" ")}`}>
       {
         icons.map(icon => (
           <li key={ icon.name }>
-            <a href={ icon.link }>
-              <img src={ icon.src } alt={ icon.name } />
-            </a>
+            <Icon { ...icon } />
           </li>
         ))
       }

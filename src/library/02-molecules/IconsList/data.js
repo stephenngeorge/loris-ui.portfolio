@@ -15,21 +15,25 @@ import { FACEBOOK_LOGO, SENT_MAIL_ICON, TWITTER_LOGO } from '../../demo/assets'
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  direction: "column",
   icons: [
     {
       name: 'facebook',
-      link: 'https://www.facebook.com',
-      src: FACEBOOK_LOGO
+      size: 'md',
+      src: FACEBOOK_LOGO,
+      url: 'https://www.facebook.com'
     },
     {
       name: 'twitter',
-      link: 'https://twitter.com',
-      src: TWITTER_LOGO
+      size: 'md',
+      src: TWITTER_LOGO,
+      url: 'https://twitter.com'
     },
     {
       name: 'email',
-      link: 'https://google.co.uk',
-      src: SENT_MAIL_ICON
+      size: 'md',
+      src: SENT_MAIL_ICON,
+      url: 'https://google.co.uk'
     }
   ]
 }

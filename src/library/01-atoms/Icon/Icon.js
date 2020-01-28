@@ -16,9 +16,10 @@ import { ThemeContext } from '../../00-protons/Themer/Themer'
 
 const Icon = ({
   additionalClasses,
-  icon,
+  name,
   scopedStyles,
   size,
+  src,
   url
 }) => {
   // consume theme and set styles
@@ -56,20 +57,21 @@ const Icon = ({
   ]
   return validateIcon(size).length > 0 ? null : url.length === 0 ? (
     <div className={`${classes.join(" ")}`}>
-      <img style={ imageStyles } src={ icon.src } alt={ icon.name } />
+      <img style={ imageStyles } src={ src } alt={ name } />
     </div>
   ) : (
     <a href={ url } className={`${classes.join(" ")}`}>
-      <img style={ imageStyles } src={ icon.src } alt={ icon.name } />
+      <img style={ imageStyles } src={ src } alt={ name } />
     </a>
   )
 }
 
 Icon.propTypes = {
   additionalClasses: PropTypes.array,
-  icon: PropTypes.object,
+  name: PropTypes.string.isRequired,
   scopedStyles: PropTypes.object,
   size: PropTypes.string,
+  src: PropTypes.string.isRequired,
   url: PropTypes.string
 }
 
