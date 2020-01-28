@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { ButtonRow } from './library'
-import { ButtonRowData } from './library/data'
+import { CoverImage } from './library'
+import { CoverImageData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <ButtonRow { ...ButtonRowData } />
+      <CoverImage { ...CoverImageData } />
     </div>
   </Router>
 )

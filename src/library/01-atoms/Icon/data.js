@@ -10,14 +10,14 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { clock_icon } from '../../demo/assets'
+import { CLOCK_ICON } from '../../demo/assets'
 
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
   icon: {
     name: "Clock icon",
-    src: clock_icon
+    src: CLOCK_ICON
   },
   size: "sm",
   url: "https://google.co.uk"

@@ -1,11 +1,28 @@
-import clock_icon from './wall-clock.svg'
-import facebook_logo from './facebook-logo.svg'
-import sent_mail from './sent-mail.svg'
-import twitter_logo from './twitter-logo.svg'
+/**
+ * ----------
+ * ICONS
+ * ----------
+ * .svg
+ */
+import CLOCK_ICON from './wall-clock.svg'
+import FACEBOOK_LOGO from './facebook-logo.svg'
+import SENT_MAIL_ICON from './sent-mail.svg'
+import TWITTER_LOGO from './twitter-logo.svg'
+
+/**
+ * ----------
+ * IMAGES/PHOTOS
+ * ----------
+ * .jpg, .jpeg, .png
+ */
+import WESTMINSTER_STATION from './wanderlust_image.jpeg'
 
 export {
-  clock_icon,
-  facebook_logo,
-  sent_mail,
-  twitter_logo
+  // export icons
+  CLOCK_ICON,
+  FACEBOOK_LOGO,
+  SENT_MAIL_ICON,
+  TWITTER_LOGO,
+  // export images
+  WESTMINSTER_STATION
 }
