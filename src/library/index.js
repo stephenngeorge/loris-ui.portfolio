@@ -6,6 +6,7 @@ import {
   CoverImage,
   Heading,
   Icon,
+  ImageLoader,
   LinkButton,
   RichText,
   Title
@@ -33,6 +34,7 @@ export {
   Heading,
   Icon,
   IconsList,
+  ImageLoader,
   LinkButton,
   PageNav,
   RichText,

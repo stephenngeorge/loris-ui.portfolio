@@ -6,6 +6,7 @@
 import { data as CoverImageData } from './01-atoms/CoverImage/data'
 import { data as HeadingData } from './01-atoms/Heading/data'
 import { data as IconData } from './01-atoms/Icon/data'
+import { data as ImageLoaderData } from './01-atoms/ImageLoader/data'
 import { data as LinkButtonData } from './01-atoms/LinkButton/data'
 import { data as RichTextData } from './01-atoms/RichText/data'
 import { data as TitleData } from './01-atoms/Title/data'
@@ -25,6 +26,7 @@ export {
   CoverImageData,
   HeadingData,
   IconData,
+  ImageLoaderData,
   LinkButtonData,
   RichTextData,
   TitleData,
