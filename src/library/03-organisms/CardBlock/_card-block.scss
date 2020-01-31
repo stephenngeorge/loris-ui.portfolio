@@ -16,9 +16,3 @@
     width: (96% / $i) - $i;
   }
 }
-
-@each $color, $value in $theme-colors {
-  .card-block.card-block--bg-#{$color} { background-color: rgba($value, .2); }
-}
-// set background for extra colours (grey does not appear in theme-colors
-.card-block.card-block--bg-grey { background-color: rgba($color--grey, 1); }
