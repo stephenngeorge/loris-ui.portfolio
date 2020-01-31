@@ -13,9 +13,11 @@
  * }
  */
 
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from 'react-router-dom'
 import PropTypes from "prop-types"
+
+import { ThemeContext } from '../../00-protons/Themer/Themer'
 
 const SideNav = ({
   additionalClasses,
@@ -23,7 +25,15 @@ const SideNav = ({
   linkColor,
   menuItems
 }) => {
-  const validateMenu = linkColor => {
+  // consume theme and set styles
+  const { colors, fontFamilies, fontSizes } = useContext(ThemeContext)
+  const navStyles = {
+    color: colors[linkColor],
+    fontFamily: fontFamilies.serif,
+    fontSize: fontSizes.lead
+  }
+
+  const validateMenu = direction => {
     let errors = []
 
     if (["column", "row", "column-reverse", "row-reverse"].indexOf(direction) < 0) {
@@ -31,14 +41,6 @@ const SideNav = ({
         type: "VALUE OUT OF RANGE",
         source: "SideNav > props.direction",
         message: "direction must be one of 'column' | 'row' | 'column-reverse' | 'row-reverse', these correspond to flex-direction values"
-      })
-    }
-
-    if (["main", "secondary", "complementary", "dark", "light"].indexOf(linkColor) < 0) {
-      errors.push({
-        type: "VALUE OUT OF RANGE",
-        source: "SideNav > props.linkColor",
-        message: "link color must be one of 'main' | 'complementary' | 'secondary' | 'light' | 'dark'. These correspond to sass variables."
       })
     }
 
@@ -51,12 +53,12 @@ const SideNav = ({
 
   const classes = ["side-nav", ...additionalClasses]
   const navClasses = [`side-nav__nav--${direction}`]
-  return validateMenu(linkColor).length > 0 ? null : (
+  return validateMenu(direction).length > 0 ? null : (
     <aside className={`${classes.join(" ")}`}>
-      <nav className={`${navClasses.join(" ")}`}>
+      <nav style={ navStyles } className={`${navClasses.join(" ")}`}>
         {
           menuItems.map(item => (
-            <Link className={`color--${linkColor}`} key={ item.label } to={ item.link }>
+            <Link key={ item.label } to={ item.link }>
               { item.label }
             </Link>
           ))

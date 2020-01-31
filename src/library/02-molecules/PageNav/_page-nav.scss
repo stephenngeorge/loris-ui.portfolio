@@ -27,11 +27,3 @@
 .page-nav__link:hover > .underline {
   transform: scaleX(1);
 }
-
-@each $color, $value in $theme-colors {
-  .page-nav__link--#{$color}:focus::after,
-  .page-nav__link--#{$color}:active::after,
-  .page-nav__link--#{$color}:hover::after {
-    background-color: rgba($value, .4);
-  }
-}
