@@ -14,7 +14,7 @@ const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
   backgroundColor: "grey",
-  rowContains: 2,
+  rowContains: 3,
   wrapOn: "row"
 }
 

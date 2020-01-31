@@ -40,8 +40,6 @@ const Card = ({
 
   const classes = [
     "card",
-    `card-background--${backgroundColor}`,
-    `card-border--${borderColor}`,
     ...additionalClasses
   ]
   return (

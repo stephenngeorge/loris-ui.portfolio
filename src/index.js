@@ -12,7 +12,8 @@ render(
     colors: {
       main: "#6CA4C8",
       secondary: "#B88A9F",
-      dark: "#121F1F"
+      dark: "#121F1F",
+      grey: "#F9F8F7"
     }
   }}>
     <App />
