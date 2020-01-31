@@ -7,27 +7,45 @@
  * as navigation within a page, i.e. the urls may change,
  * but the links in a Page Nav should not take you away 
  * from the page you are on.
+ * 
  */
 
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from 'react-router-dom'
 import PropTypes from "prop-types"
+
+import { ThemeContext } from '../../00-protons/Themer/Themer'
 
 const PageNav = ({
   additionalClasses,
   linkHighlight,
-  links
+  links,
+  scopedStyles
 }) => {
+  // consume theme and set styles
+  const { colors, fontFamilies, fontWeights } = useContext(ThemeContext)
+  const navStyles = {
+    color: colors.dark,
+    fontFamily: fontFamilies.serif,
+    fontWeight: fontWeights.heavy,
+    ...scopedStyles
+  }
+
+  const underlineStyles = {
+    backgroundColor: colors[linkHighlight]
+  }
+
   const classes = [
     "page-nav",
     ...additionalClasses
   ]
   return (
-    <nav className={`${classes.join(" ")}`}>
+    <nav style={ navStyles } className={`${classes.join(" ")}`}>
       {
         links.map(link => (
           <Link className={`page-nav__link page-nav__link--${linkHighlight}`} key={ link.label } to={ link.url }>
             { link.label }
+            <div style={ underlineStyles } className="underline"></div>
           </Link>
         ))
       }
@@ -38,12 +56,14 @@ const PageNav = ({
 PageNav.propTypes = {
   additionalClasses: PropTypes.array,
   linkHighlight: PropTypes.string,
-  links: PropTypes.array.isRequired
+  links: PropTypes.array.isRequired,
+  scopedStyles: PropTypes.object
 }
 
 PageNav.defaultProps = {
   additionalClasses: [],
-  linkHighlight: "main"
+  linkHighlight: "main",
+  scopedStyles: {}
 }
 
 export default PageNav

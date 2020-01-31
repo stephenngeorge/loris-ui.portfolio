@@ -10,9 +10,15 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
+import { CAMERA_PLACEHOLDER, WESTMINSTER_STATION } from '../../demo/assets'
+
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  imageAlt: "abstract photo of Westminster underground station",
+  imageId: "westminster-tube-station",
+  imageSrc: WESTMINSTER_STATION,
+  placeholderImageSrc: CAMERA_PLACEHOLDER
 }
 
 export {
