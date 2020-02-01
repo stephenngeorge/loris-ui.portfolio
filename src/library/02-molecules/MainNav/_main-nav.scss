@@ -1,3 +1,4 @@
+// LOCAL VARIABLES
 $menu-height--tall: 5rem;
 $menu-height--short: 3.5rem;
 $menu-item--padding: 1.5rem;
@@ -17,7 +18,7 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
   width: 100%;
   height: $menu-height--short;
 
-  transition: height .2s ease-out, background-color .2s ease-out;
+  transition: height .1s ease-out, background-color .1s ease-out;
   // remove underline from all menu links
   a {
     text-decoration: none;
@@ -61,8 +62,8 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
     > div {
       position: absolute;
       left: 50%;
-      width: 60%;
-      height: .3rem;
+      width: 50%;
+      height: .25rem;
       border-radius: .125rem;
       background-color: $color--light;
       transform: translate(-50%, -50%);
@@ -104,6 +105,7 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
     a {
       color: inherit;
       font-size: 1rem;
+      font-weight: $font-weight-heavy;
 
       display: flex;
       justify-content: center;
@@ -124,10 +126,10 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 
   .icon-arrow {
     .main-nav__menu-icon--middle {
-      width: 40%;
+      width: 35%;
     }
     .main-nav__menu-icon--bottom {
-      width: 20%;
+      width: 10%;
     }
   }
 }
@@ -158,8 +160,8 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 
 .main-nav--light {
   height: $menu-height--tall;
-  background: transparent;
-  background-image: linear-gradient(to bottom, rgba($color--dark, .5), rgba($color--dark, 0) 100%);
+  background: rgba($color--dark, .4);
+  //background-image: linear-gradient(to bottom, rgba($color--dark, .5), rgba($color--dark, 0) 100%);
 
   .main-nav__controls {
     height: $menu-height--tall;
@@ -172,5 +174,10 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
   .main-nav__menu {
     background: none;
     color: $color--light;
+
+    a:hover {
+      color: $color--secondary;
+      background-color: rgba($color--dark, .2)
+    }
   }
 }

@@ -10,7 +10,7 @@
  * 
  */
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import * as errorTypes from '../../errorTypes'
@@ -19,11 +19,25 @@ const CoverImage = ({
   additionalClasses,
   coverImageId,
   imageAlt,
+  imageId,
   imagePos,
   imageSize,
   imageSrc,
   scopedStyles
 }) => {
+  const [isLoading, setIsLoading] = useState(true)
+  useEffect(() => {
+    const componentImage = document.querySelector(`#${imageId}`)
+    if (componentImage !== null && componentImage !== undefined) {
+      const targetImage = new Image()
+      targetImage.onload = () => {
+        setIsLoading(false)
+        componentImage.src = targetImage.src
+      }
+      targetImage.src = imageSrc
+    }
+  }, [imageSrc, imageId])
+
   const styles = {
     width: imageSize.width,
     height: imageSize.height,
@@ -69,7 +83,11 @@ const CoverImage = ({
     return errors
   }
 
-  const classes = ["cover-image", ...additionalClasses]
+  const classes = [
+    "cover-image",
+    isLoading ? "image-loading" : "",
+    ...additionalClasses
+  ]
   return validateImage(imagePos, imageSrc).length > 0 ? null : (
     <div style={ styles } className={`${classes.join(" ")}`} id={ coverImageId }>
       <img  data-object-fit="cover"
@@ -85,6 +103,7 @@ CoverImage.propTypes = {
   additionalClasses: PropTypes.array,
   coverImageId: PropTypes.string,
   imageAlt: PropTypes.string,
+  imageId: PropTypes.string.isRequired,
   imagePos: PropTypes.object, // <-- object with keys "x" and "y"
   imageSize: PropTypes.object, // <-- object with keys "width" and "height"
   imageSrc: PropTypes.string, // <-- file path to a .jpg, .png, .svg...

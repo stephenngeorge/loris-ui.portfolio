@@ -25,6 +25,7 @@ import { ThemeContext } from '../../00-protons/Themer/Themer'
 const MainNav = ({
   additionalClasses,
   menuLinks,
+  scopedStyles,
   siteTitle
 }) => {
   const [colorTheme, setColorTheme] = useState("dark")
@@ -65,7 +66,8 @@ const MainNav = ({
   const { fontFamilies, fontSizes } = useContext(ThemeContext)
   const menuStyles = {
     fontFamily: fontFamilies.serif,
-    fontSize: fontSizes.default
+    fontSize: fontSizes.default,
+    ...scopedStyles
   }
   const linkStyles = {
     fontFamily: fontFamilies.sans_serif
@@ -110,11 +112,13 @@ const MainNav = ({
 MainNav.propTypes = {
   additionalClasses: PropTypes.array,
   menuLinks: PropTypes.array.isRequired,
+  scopedStyles: PropTypes.object,
   siteTitle: PropTypes.string.isRequired
 }
 
 MainNav.defaultProps = {
   additionalClasses: [],
+  scopedStyles: {}
 }
 
 export default MainNav

@@ -17,6 +17,7 @@ const data = {
   // PropName: prop value
   coverImageId: "test-image",
   imageAlt: "abstract photograph of Westminster tube station",
+  imageId: "westminster-station",
   imagePos: { x: "50%", y: "50%" },
   imageSize: { width: "26rem", height: "24rem" },
   imageSrc: WESTMINSTER_STATION
