@@ -33,7 +33,7 @@ const MainNav = ({
     const selectColorTheme = () => {
       switch (location.pathname) {
         case "/":
-          if (window.innerWidth >= 992) {
+          if (window.innerWidth >= 992 && window.scrollY < window.innerHeight / 3) {
             setColorTheme("light")
           }
           else setColorTheme("dark")
@@ -44,19 +44,19 @@ const MainNav = ({
     }
     selectColorTheme()
 
-    const applyDarkTheme = () => {
-      if (window.innerWidth >= 992) {
+    const menuScrollBehaviours = () => {
+      if (window.innerWidth >= 992 && location.pathname === "/") {
         if (window.scrollY > window.innerHeight / 3) setColorTheme("dark")
         else setColorTheme("light")
       }
     }
     
     window.addEventListener("resize", selectColorTheme)
-    window.addEventListener("scroll", applyDarkTheme)
+    window.addEventListener("scroll", menuScrollBehaviours)
 
     return () => {
       window.removeEventListener("resize", selectColorTheme)
-      window.removeEventListener("scroll", applyDarkTheme)
+      window.removeEventListener("scroll", menuScrollBehaviours)
     }
       
   }, [location.pathname])
