@@ -13,6 +13,21 @@
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  menuLinks: [
+    {
+      path: "/galleries",
+      label: "galleries"
+    },
+    {
+      path: "/buy",
+      label: "buy"
+    },
+    {
+      path: "/contact",
+      label: "contact"
+    }
+  ],
+  siteTitle: "Neil George Photography"
 }
 
 export {

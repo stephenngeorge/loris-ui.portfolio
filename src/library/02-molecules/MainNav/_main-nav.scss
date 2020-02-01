@@ -1,3 +1,176 @@
-.main-nav {
+$menu-height--tall: 5rem;
+$menu-height--short: 3.5rem;
+$menu-item--padding: 1.5rem;
 
+$menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
+
+// generic menu styles
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  overflow: visible;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $menu-height--short;
+
+  transition: height .2s ease-out, background-color .2s ease-out;
+  // remove underline from all menu links
+  a {
+    text-decoration: none;
+  }
+
+  // .main-nav__controls contains branding link &
+  // menu icon button for toggling menu on small devices.
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: $menu-height--short;
+    // pass theme font size down from parent
+    font-size: inherit;
+
+    a {
+      font-size: inherit;
+      padding: 0 $menu-item--padding;
+    }
+  }
+
+  // .main-nav__menu-icon is the button that appears on
+  // mobile devices and toggles the menu.
+  &__menu-icon {
+    background: none;
+    border: none;
+    width: $menu-height--short;
+    position: relative;
+    align-self: stretch;
+    display: block;
+    @include breakpoint("lg") {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    // styles for all three bars of the menu icon
+    > div {
+      position: absolute;
+      left: 50%;
+      width: 60%;
+      height: .3rem;
+      border-radius: .125rem;
+      background-color: $color--light;
+      transform: translate(-50%, -50%);
+      transition: width .2s ease;
+    }
+    // styles specific to each bar of the menu icon
+    &--top {
+      top: 30%;
+    }
+    &--middle {
+      top: 50%;
+    }
+    &--bottom {
+      top: 70%;
+    }
+  }
+
+  // The nav that contains a series of links to different
+  // pages within the site.
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -100%;
+    transition: left .4s ease-out;
+    top: $menu-height--short;
+    width: 100%;
+    z-index: -10;
+    transition: height .2s ease-out, background-color .2s ease-out, left .4s ease-out;
+    @include breakpoint("lg") {
+      position: relative;
+      flex-direction: row;
+      left: unset;
+      top: unset;
+      width: fit-content;
+      box-shadow: none;
+    }
+
+    a {
+      color: inherit;
+      font-size: 1rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem $menu-item--padding;
+      transition: background-color .2s ease, color .2s ease;
+      @include breakpoint("lg") {
+        padding: 0 $menu-item--padding;
+        font-size: .8rem;
+      }
+      text-transform: uppercase;
+    }
+  }
+
+  .onscreen {
+    left: 0;
+  }
+
+  .icon-arrow {
+    .main-nav__menu-icon--middle {
+      width: 40%;
+    }
+    .main-nav__menu-icon--bottom {
+      width: 20%;
+    }
+  }
+}
+
+.main-nav--dark {
+  background-color: $color--dark;
+  box-shadow: $menu-shadow;
+
+  .main-nav__controls a {
+    color: $color--light;
+  }
+
+  .main-nav__menu {
+    background-color: $color--dark;
+    color: $color--light;
+    box-shadow: $menu-shadow;
+    @include breakpoint("lg") {
+      box-shadow: none;
+      background-color: none;
+    }
+
+    a:hover {
+      background-color: darken($color--dark, 4%);
+      color: $color--secondary;
+    }
+  }
+}
+
+.main-nav--light {
+  height: $menu-height--tall;
+  background: transparent;
+  background-image: linear-gradient(to bottom, rgba($color--dark, .5), rgba($color--dark, 0) 100%);
+
+  .main-nav__controls {
+    height: $menu-height--tall;
+    a {
+      color: $color--light;
+      font-weight: $font-weight-heavy;
+    }
+  }
+
+  .main-nav__menu {
+    background: none;
+    color: $color--light;
+  }
 }

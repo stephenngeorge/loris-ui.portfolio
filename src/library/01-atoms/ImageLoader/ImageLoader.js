@@ -32,7 +32,7 @@ const ImageLoader = ({
       }
       targetImage.src = imageSrc
     }
-  }, [])
+  }, [imageSrc, imageId])
 
   const classes = [
     "image-loader",
