@@ -15,6 +15,7 @@ import { data as TitleData } from './01-atoms/Title/data'
 import { data as ButtonRowData } from './02-molecules/ButtonRow/data'
 import { data as CardData } from './02-molecules/Card/data'
 import { data as IconsListData } from './02-molecules/IconsList/data'
+import { data as MainNavData } from './02-molecules/MainNav/data'
 import { data as PageNavData } from './02-molecules/PageNav/data'
 import { data as SideNavData } from './02-molecules/SideNav/data'
 import { data as TextSectionData } from './02-molecules/TextSection/data'
@@ -33,6 +34,7 @@ export {
   ButtonRowData,
   CardData,
   IconsListData,
+  MainNavData,
   PageNavData,
   SideNavData,
   TextSectionData,

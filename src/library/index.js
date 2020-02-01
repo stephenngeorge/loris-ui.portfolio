@@ -16,6 +16,7 @@ import {
   ButtonRow,
   Card,
   IconsList,
+  MainNav,
   PageNav,
   SideNav,
   TextSection
@@ -36,6 +37,7 @@ export {
   IconsList,
   ImageLoader,
   LinkButton,
+  MainNav,
   PageNav,
   RichText,
   SideNav,
