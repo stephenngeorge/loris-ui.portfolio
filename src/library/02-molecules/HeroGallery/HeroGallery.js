@@ -26,7 +26,7 @@
  * 
  */
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import { CoverImage } from '../../01-atoms'
@@ -38,6 +38,15 @@ const HeroGallery = ({
 }) => {
   let randomIndex = Math.floor(Math.random() * Math.floor(images.length))
   const [imageInView, setImageInView] = useState(randomIndex)
+
+  useEffect(() => {
+    let randomIndex = Math.floor(Math.random() * Math.floor(images.length))
+    if (randomIndex === imageInView) {
+      if (imageInView === images.length - 1) randomIndex = 0
+      randomIndex += 1
+    }
+    setTimeout(() => setImageInView(randomIndex), 7400)
+  }, [imageInView])
 
   const galleryStyles = {
     width: gallerySize.width,

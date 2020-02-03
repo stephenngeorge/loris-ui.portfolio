@@ -7,3 +7,12 @@
     flex-shrink: 0;
   }
 }
+
+.image-in-view {
+  animation: image-fade-in 1.4s ease-out forwards;
+}
+
+@keyframes image-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
