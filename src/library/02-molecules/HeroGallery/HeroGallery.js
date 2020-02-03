@@ -88,7 +88,7 @@ HeroGallery.defaultProps = {
   additionalClasses: [],
   gallerySize: {
     width: "100%",
-    height: "60vh"
+    height: "100vh"
   }
 }
 

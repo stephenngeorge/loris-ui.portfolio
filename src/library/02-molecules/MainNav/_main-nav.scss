@@ -14,9 +14,12 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
+  max-width: 1248px;
   height: $menu-height--short;
+  z-index: $zindex-foreground;
 
   transition: height .1s ease-out, background-color .1s ease-out;
   // remove underline from all menu links
@@ -92,7 +95,7 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
     top: $menu-height--short;
     width: 100%;
     z-index: -10;
-    transition: height .2s ease-out, background-color .2s ease-out, left .4s ease-out;
+    transition: height .2s ease-out;
     @include breakpoint("lg") {
       position: relative;
       flex-direction: row;
@@ -135,7 +138,6 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 }
 
 .main-nav--dark {
-  background-color: $color--dark;
   box-shadow: $menu-shadow;
 
   .main-nav__controls a {
@@ -160,8 +162,6 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 
 .main-nav--light {
   height: $menu-height--tall;
-  background: rgba($color--dark, .4);
-  //background-image: linear-gradient(to bottom, rgba($color--dark, .5), rgba($color--dark, 0) 100%);
 
   .main-nav__controls {
     height: $menu-height--tall;
@@ -180,4 +180,23 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
       background-color: rgba($color--dark, .2)
     }
   }
+}
+
+.nav-wrapper--dark,
+.nav-wrapper--light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $zindex-foreground - 10;
+}
+
+.nav-wrapper--dark {
+  height: $menu-height--short;
+  background-color: $color--dark;
+}
+
+.nav-wrapper--light {
+  height: $menu-height--tall;
+  background-color: rgba($color--dark, .4);
 }

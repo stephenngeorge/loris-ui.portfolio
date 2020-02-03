@@ -91,20 +91,22 @@ const MainNav = ({
     ...additionalClasses
   ]
   return (
-    <div style={ menuStyles } className={`${classes.join(" ")}`}>
-      <div className="main-nav__controls">
-        <Link onClick={ () => controlMenu('remove') } to="/">{ siteTitle }</Link>
-        <button onClick={ () => controlMenu('toggle') } className="main-nav__menu-icon">
-          <div className="main-nav__menu-icon--top"></div>
-          <div className="main-nav__menu-icon--middle"></div>
-          <div className="main-nav__menu-icon--bottom"></div>
-        </button>
+    <div className={`nav-wrapper--${colorTheme}`}>
+      <div style={ menuStyles } className={`${classes.join(" ")}`}>
+        <div className="main-nav__controls">
+          <Link onClick={ () => controlMenu('remove') } to="/">{ siteTitle }</Link>
+          <button onClick={ () => controlMenu('toggle') } className="main-nav__menu-icon">
+            <div className="main-nav__menu-icon--top"></div>
+            <div className="main-nav__menu-icon--middle"></div>
+            <div className="main-nav__menu-icon--bottom"></div>
+          </button>
+        </div>
+        <nav style={ linkStyles } className="main-nav__menu">
+          { menuLinks.map(link => (
+            <Link onClick={ () => controlMenu('remove') } key={ link.label } to={ link.path }>{ link.label }</Link>) 
+          ) }
+        </nav>
       </div>
-      <nav style={ linkStyles } className="main-nav__menu">
-        { menuLinks.map(link => (
-          <Link onClick={ () => controlMenu('remove') } key={ link.label } to={ link.path }>{ link.label }</Link>) 
-        ) }
-      </nav>
     </div>
   )
 }
