@@ -15,6 +15,7 @@ import {
 import {
   ButtonRow,
   Card,
+  HeroGallery,
   IconsList,
   MainNav,
   PageNav,
@@ -33,6 +34,7 @@ export {
   CardBlock,
   CoverImage,
   Heading,
+  HeroGallery,
   Icon,
   IconsList,
   ImageLoader,

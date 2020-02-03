@@ -14,6 +14,7 @@ import { data as TitleData } from './01-atoms/Title/data'
 // import data objects from 02-molecules
 import { data as ButtonRowData } from './02-molecules/ButtonRow/data'
 import { data as CardData } from './02-molecules/Card/data'
+import { data as HeroGalleryData } from './02-molecules/HeroGallery/data'
 import { data as IconsListData } from './02-molecules/IconsList/data'
 import { data as MainNavData } from './02-molecules/MainNav/data'
 import { data as PageNavData } from './02-molecules/PageNav/data'
@@ -33,6 +34,7 @@ export {
   TitleData,
   ButtonRowData,
   CardData,
+  HeroGalleryData,
   IconsListData,
   MainNavData,
   PageNavData,
