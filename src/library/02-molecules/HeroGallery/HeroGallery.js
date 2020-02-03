@@ -45,6 +45,8 @@ const HeroGallery = ({
       if (imageInView === images.length - 1) randomIndex = 0
       randomIndex += 1
     }
+    // the duration at the end here should match the 
+    // animation duration set in the scss file (.image-cross-fade)
     setTimeout(() => setImageInView(randomIndex), 7400)
   }, [imageInView])
 
@@ -59,7 +61,7 @@ const HeroGallery = ({
     <section style={ galleryStyles } className={`${classes.join(" ")}`}>
       {
         images.map((image, i) => {
-          let viewClass = imageInView === i ? "image-in-view" : ""
+          let viewClass = imageInView === i ? "image-cross-fade" : ""
           let galleryPosition = i === 0 ? `-${100 * imageInView}%` : "0"
           return (
             <CoverImage
