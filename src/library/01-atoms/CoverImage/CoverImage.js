@@ -20,6 +20,7 @@ const CoverImage = ({
   coverImageId,
   imageAlt,
   imageId,
+  imagePlaceholderSrc,
   imagePos,
   imageSize,
   imageSrc,
@@ -47,7 +48,7 @@ const CoverImage = ({
     objectPosition: `${imagePos.x} ${imagePos.y}`
   }
 
-  const validateImage = (imagePos, imageSrc) => {
+  const validateImage = (imagePos, imageSize, imageSrc) => {
     let errors = []
 
     let imagePosKeys = Object.keys(imagePos)
@@ -88,11 +89,12 @@ const CoverImage = ({
     isLoading ? "image-loading" : "",
     ...additionalClasses
   ]
-  return validateImage(imagePos, imageSrc).length > 0 ? null : (
+  return validateImage(imagePos, imageSize, imageSrc).length > 0 ? null : (
     <div style={ styles } className={`${classes.join(" ")}`} id={ coverImageId }>
       <img  data-object-fit="cover"
             alt={ imageAlt }
-            src={ imageSrc }
+            id={ imageId }
+            src={ imagePlaceholderSrc ? imagePlaceholderSrc : imageSrc }
             style={ imageStyles }
       />
     </div>
@@ -104,6 +106,7 @@ CoverImage.propTypes = {
   coverImageId: PropTypes.string,
   imageAlt: PropTypes.string,
   imageId: PropTypes.string.isRequired,
+  imagePlaceholderSrc: PropTypes.string,
   imagePos: PropTypes.object, // <-- object with keys "x" and "y"
   imageSize: PropTypes.object, // <-- object with keys "width" and "height"
   imageSrc: PropTypes.string, // <-- file path to a .jpg, .png, .svg...

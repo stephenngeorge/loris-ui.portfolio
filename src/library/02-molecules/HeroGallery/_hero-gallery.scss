@@ -1,3 +1,9 @@
 .hero-gallery {
-
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  
+  .cover-image {
+    flex-shrink: 0;
+  }
 }
