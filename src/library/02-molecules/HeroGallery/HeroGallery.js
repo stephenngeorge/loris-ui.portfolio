@@ -48,7 +48,7 @@ const HeroGallery = ({
     // the duration at the end here should match the 
     // animation duration set in the scss file (.image-cross-fade)
     setTimeout(() => setImageInView(randomIndex), 7400)
-  }, [imageInView])
+  }, [imageInView, images])
 
   const galleryStyles = {
     width: gallerySize.width,
@@ -56,7 +56,6 @@ const HeroGallery = ({
   }
 
   const classes = ["hero-gallery", ...additionalClasses]
-  console.log(images)
   return (
     <section style={ galleryStyles } className={`${classes.join(" ")}`}>
       {

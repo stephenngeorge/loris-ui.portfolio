@@ -19,7 +19,7 @@ const data = {
   imageAlt: "abstract photograph of Westminster tube station",
   imageId: "westminster-station",
   imagePos: { x: "50%", y: "50%" },
-  imageSize: { width: "26rem", height: "24rem" },
+  imageSize: { width: "100%", height: "100vh" },
   imageSrc: WESTMINSTER_STATION
 }
 
