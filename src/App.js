@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { CoverImage } from './library'
-import { CoverImageData } from './library/data'
+import { HeroGallery, MainNav } from './library'
+import { HeroGalleryData, MainNavData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <CoverImage { ...CoverImageData } />
+      <MainNav { ...MainNavData } />
+      <HeroGallery { ...HeroGalleryData } />
     </div>
   </Router>
 )
