@@ -20,6 +20,7 @@ import {
   MainNav,
   PageNav,
   SideNav,
+  StaticGallery,
   TextSection
 } from "./02-molecules"
 
@@ -43,6 +44,7 @@ export {
   PageNav,
   RichText,
   SideNav,
+  StaticGallery,
   TextSection,
   Themer,
   Title

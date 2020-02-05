@@ -19,6 +19,7 @@ import { data as IconsListData } from './02-molecules/IconsList/data'
 import { data as MainNavData } from './02-molecules/MainNav/data'
 import { data as PageNavData } from './02-molecules/PageNav/data'
 import { data as SideNavData } from './02-molecules/SideNav/data'
+import { data as StaticGalleryData } from './02-molecules/StaticGallery/data'
 import { data as TextSectionData } from './02-molecules/TextSection/data'
 
 // import data objects from 03-organisms
@@ -39,6 +40,7 @@ export {
   MainNavData,
   PageNavData,
   SideNavData,
+  StaticGalleryData,
   TextSectionData,
   CardBlockData
 }
