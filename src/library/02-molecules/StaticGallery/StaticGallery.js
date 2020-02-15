@@ -59,7 +59,7 @@ const StaticGallery = ({
           },
           {
             label: 'Urban and Abstract',
-            link: '/galleries/urban-and-abstract'
+            link: '/'
           }
         ]}
       />
