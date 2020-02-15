@@ -25,7 +25,8 @@ import {
 } from "./02-molecules"
 
 import {
-  CardBlock
+  CardBlock,
+  GalleryFull
 } from "./03-organisms"
 
 
@@ -34,6 +35,7 @@ export {
   Card,
   CardBlock,
   CoverImage,
+  GalleryFull,
   Heading,
   HeroGallery,
   Icon,

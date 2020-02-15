@@ -24,6 +24,7 @@ import { data as TextSectionData } from './02-molecules/TextSection/data'
 
 // import data objects from 03-organisms
 import { data as CardBlockData } from './03-organisms/CardBlock/data'
+import { data as GalleryFullData } from './03-organisms/GalleryFull/data'
 
 export {
   CoverImageData,
@@ -42,5 +43,6 @@ export {
   SideNavData,
   StaticGalleryData,
   TextSectionData,
-  CardBlockData
+  CardBlockData,
+  GalleryFullData
 }
