@@ -1,5 +1,7 @@
 .gallery-full {
-
+  .button-row {
+    transform: translateY(-50%);
+  }
 }
 
 .image-scroller {
@@ -13,8 +15,11 @@
   &__image {
     flex-shrink: 0;
     position: relative;
-    max-width: 15rem;
+    width: 15rem;
     padding: 3rem 1rem;
+    &:nth-last-child(1) {
+      padding-right: 2rem;
+    }
     color: inherit;
 
     .image-loader {
@@ -45,5 +50,17 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.image-focus {
+  padding: 2rem;
+  .cover-image {
+    width: 100%;
+    @include breakpoint("lg") {
+      max-width: 60vw;
+    }
+    margin: 0 auto;
+    box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .65);
   }
 }

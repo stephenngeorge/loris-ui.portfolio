@@ -19,19 +19,22 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 
 import ImageScroller from './ImageScroller'
+import ImageFocus from './ImageFocus'
 
 const GalleryFull = ({
   additionalClasses,
+  children,
   galleryColor,
   images
 }) => {
   const [focusImage, setFocusImage] = useState(0);
 
-  console.log(focusImage)
   const classes = ["gallery-full", ...additionalClasses]
   return (
     <section className={`${classes.join(" ")}`}>
-      <ImageScroller images={ images } bgColor={ galleryColor } setFocusImage={ setFocusImage }></ImageScroller>
+      <ImageScroller images={ images } bgColor={ galleryColor } setFocusImage={ setFocusImage } />
+      { children }
+      <ImageFocus images={ images } focusImage={ focusImage } />
     </section>
   )
 }

@@ -30,9 +30,11 @@ const CoverImage = ({
   useEffect(() => {
     const componentImage = document.querySelector(`#${imageId}`)
     if (componentImage !== null && componentImage !== undefined) {
+      componentImage.classList.remove('image-in')
       const targetImage = new Image()
       targetImage.onload = () => {
         setIsLoading(false)
+        componentImage.classList.add('image-in')
         componentImage.src = targetImage.src
       }
       targetImage.src = imageSrc
