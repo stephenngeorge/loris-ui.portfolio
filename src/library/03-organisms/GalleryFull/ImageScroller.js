@@ -32,7 +32,8 @@ const ImageScroller = ({
   additionalClasses,
   bgColor,
   images,
-  scopedStyles
+  scopedStyles,
+  setFocusImage
 }) => {
   // consume theme and set styles
   const { colors } = useContext(ThemeContext)
@@ -47,8 +48,8 @@ const ImageScroller = ({
     <div style={ scrollerStyles } className={`${classes.join(" ")}`}>
       {
         images.length > 0 &&
-        images.map(image => (
-          <div className="image-scroller__image" key={ image.imageId }>
+        images.map((image, i) => (
+          <div onClick={ () => setFocusImage(i) } className="image-scroller__image" key={ image.imageId }>
             <ImageLoader { ...image } />
             <p className="image-scroller__image--name">
               { image.imageName }
@@ -64,7 +65,8 @@ ImageScroller.propTypes = {
   additionalClasses: PropTypes.array,
   bgColor: PropTypes.string,
   images: PropTypes.array.isRequired,
-  scopedStyles: PropTypes.object
+  scopedStyles: PropTypes.object,
+  setFocusImage: PropTypes.func.isRequired
 }
 
 ImageScroller.defaultProps = {

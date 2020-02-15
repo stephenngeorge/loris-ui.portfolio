@@ -15,7 +15,7 @@
  * @requires './ImageFocus.js'
  */
 
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 
 import ImageScroller from './ImageScroller'
@@ -25,10 +25,13 @@ const GalleryFull = ({
   galleryColor,
   images
 }) => {
+  const [focusImage, setFocusImage] = useState(0);
+
+  console.log(focusImage)
   const classes = ["gallery-full", ...additionalClasses]
   return (
     <section className={`${classes.join(" ")}`}>
-      <ImageScroller images={ images } bgColor={ galleryColor }></ImageScroller>
+      <ImageScroller images={ images } bgColor={ galleryColor } setFocusImage={ setFocusImage }></ImageScroller>
     </section>
   )
 }
