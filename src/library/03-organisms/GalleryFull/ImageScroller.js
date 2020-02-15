@@ -1,0 +1,75 @@
+/**
+ * ----------
+ * IMAGESCROLLER
+ * ----------
+ * 
+ * Image Scroller components are used to display a scrollable
+ * area full of a gallery of images. Image Scrollers are consumed
+ * by the GalleryFull component.
+ * 
+ * @see './GalleryFull.js'
+ * 
+ * Image Scroller components accept an array of images, in which
+ * each object should be of shape:
+ * 
+ * {
+ * ..imageAlt: string,
+ * ..imageId: string,
+ * ..imageName: string,
+ * ..imageSrc: string (filepath)
+ * }
+ * 
+ */
+
+import React, { useContext } from "react"
+import PropTypes from "prop-types"
+
+import { ImageLoader } from '../../01-atoms'
+
+import { ThemeContext } from '../../00-protons/Themer/Themer'
+
+const ImageScroller = ({
+  additionalClasses,
+  bgColor,
+  images,
+  scopedStyles
+}) => {
+  // consume theme and set styles
+  const { colors } = useContext(ThemeContext)
+  const scrollerStyles = {
+    backgroundColor: colors[bgColor],
+    color: colors.dark,
+    ...scopedStyles
+  }
+
+  const classes = ["image-scroller", ...additionalClasses]
+  return (
+    <div style={ scrollerStyles } className={`${classes.join(" ")}`}>
+      {
+        images.length > 0 &&
+        images.map(image => (
+          <div className="image-scroller__image" key={ image.imageId }>
+            <ImageLoader { ...image } />
+            <p className="image-scroller__image--name">
+              { image.imageName }
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  )
+}
+
+ImageScroller.propTypes = {
+  additionalClasses: PropTypes.array,
+  bgColor: PropTypes.string,
+  images: PropTypes.array.isRequired,
+  scopedStyles: PropTypes.object
+}
+
+ImageScroller.defaultProps = {
+  additionalClasses: [],
+  scopedStyles: {}
+}
+
+export default ImageScroller
