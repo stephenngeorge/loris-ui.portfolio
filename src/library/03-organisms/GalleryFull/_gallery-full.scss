@@ -55,6 +55,7 @@
 
 .image-focus {
   padding: 2rem;
+  padding-bottom: 4rem;
   .cover-image {
     width: 100%;
     @include breakpoint("lg") {

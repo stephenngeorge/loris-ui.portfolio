@@ -1,5 +1,6 @@
 import ButtonRow from './ButtonRow/ButtonRow'
 import Card from './Card/Card'
+import Footer from './Footer/Footer'
 import HeroGallery from './HeroGallery/HeroGallery'
 import IconsList from './IconsList/IconsList'
 import MainNav from './MainNav/MainNav'
@@ -11,6 +12,7 @@ import TextSection from './TextSection/TextSection'
 export {
   ButtonRow,
   Card,
+  Footer,
   HeroGallery,
   IconsList,
   MainNav,

@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { GalleryFull, ButtonRow } from './library'
-import { GalleryFullData, ButtonRowData } from './library/data'
+import { Footer, GalleryFull, ButtonRow } from './library'
+import { FooterData, GalleryFullData, ButtonRowData } from './library/data'
 
 const App = () => (
   <Router>
@@ -10,6 +10,7 @@ const App = () => (
       <GalleryFull { ...GalleryFullData }>
         <ButtonRow { ...ButtonRowData } />
       </GalleryFull>
+      <Footer { ...FooterData } />
     </div>
   </Router>
 )

@@ -15,6 +15,7 @@ import {
 import {
   ButtonRow,
   Card,
+  Footer,
   HeroGallery,
   IconsList,
   MainNav,
@@ -35,6 +36,7 @@ export {
   Card,
   CardBlock,
   CoverImage,
+  Footer,
   GalleryFull,
   Heading,
   HeroGallery,
