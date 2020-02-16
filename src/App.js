@@ -1,17 +1,18 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { Footer, GalleryFull, ButtonRow } from './library'
-import { FooterData, GalleryFullData, ButtonRowData } from './library/data'
+import { Page, GalleryFull, ButtonRow } from './library'
+import { PageData, GalleryFullData, ButtonRowData } from './library/data'
 
 const App = () => (
   <Router>
+    <Page additionalClasses={['site-page']} { ...PageData }>
     <div className="App">
       <GalleryFull { ...GalleryFullData }>
         <ButtonRow { ...ButtonRowData } />
       </GalleryFull>
-      <Footer { ...FooterData } />
     </div>
+    </Page>
   </Router>
 )
 
