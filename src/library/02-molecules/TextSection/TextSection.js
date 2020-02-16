@@ -18,17 +18,17 @@ import { RichText, Title } from '../../01-atoms'
 const TextSection = ({
   additionalClasses,
   children,
-  headingLevel,
-  headingText,
+  titleLevel,
+  titleText,
   underlineColor
 }) => {
   const classes = ["text-section", ...additionalClasses]
   return (
     <section className={`${classes.join(" ")}`}>
       {
-        !!headingText &&
-        <Title  headingLevel={ headingLevel }
-                headingText={ headingText }
+        !!titleText &&
+        <Title  titleLevel={ titleLevel }
+                titleText={ titleText }
                 underlineColor={ underlineColor }
         />
       }

@@ -17,4 +17,6 @@
     border-bottom: 2px solid $color--main;
     z-index: $zindex-behind;
   }
+
+  transform: translateY(-50%);
 }

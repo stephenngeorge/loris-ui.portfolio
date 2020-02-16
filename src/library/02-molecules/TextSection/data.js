@@ -13,6 +13,9 @@
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  titleLevel: 2,
+  titleText: "Capturing the changing moods of British wildlife and nature",
+  underlineColor: "main"
 }
 
 export {

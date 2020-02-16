@@ -10,7 +10,7 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { FACEBOOK_LOGO, SENT_MAIL_ICON, TWITTER_LOGO } from '../../demo/assets'
+import { FACEBOOK_LOGO, TWITTER_LOGO } from '../../demo/assets'
 
 const data = {
   // add props here that your component will expect in the format:
@@ -28,12 +28,6 @@ const data = {
       size: 'md',
       src: TWITTER_LOGO,
       url: 'https://twitter.com'
-    },
-    {
-      name: 'email',
-      size: 'md',
-      src: SENT_MAIL_ICON,
-      url: 'https://google.co.uk'
     }
   ]
 }

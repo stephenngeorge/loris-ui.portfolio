@@ -13,14 +13,20 @@
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
-  rowColor: "secondary",
-  rowWidth: "narrow",
+  rowColor: "main",
+  rowWidth: "very-narrow",
   buttons: [
     {
-      buttonLink: "https://google.co.uk",
+      buttonLink: "/contact",
+      buttonLinkVariation: "internal",
+      buttonOutline: false,
+      buttonText: "Get in touch",
+    },
+    {
+      buttonLink: "/contact#events",
       buttonLinkVariation: "internal",
       buttonOutline: true,
-      buttonText: "Buy images",
+      buttonText: "Upcoming events",
     }
   ]
 }
