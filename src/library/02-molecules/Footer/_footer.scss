@@ -1,13 +1,20 @@
 .footer {
   display: flex;
   width: 100%;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  @include breakpoint("md") {
+    flex-direction: row;
+    align-items: center;
+  }
   justify-content: space-around;
-  padding: 1rem 0;
+  padding: 2rem;
   
   > div {
-    flex-basis: 33%;
+    flex-basis: 100%;
+    @include breakpoint("md") {
+      flex-basis: 33%;
+    }
   }
 
   &__site-map {
@@ -22,7 +29,7 @@
       font-size: inherit;
       color: inherit;
       a {
-        padding: .25rem .5rem .25rem 0;
+        padding: .25rem 1rem .25rem 0;
         text-decoration: none;
         font-size: .8rem;
         color: inherit;
@@ -32,6 +39,10 @@
   }
 
   &__social-links {
+    padding: 2rem 1rem;
+    @include breakpoint("md") {
+      padding: 0;
+    }
     .icons-list {
       justify-content: center;
     }
@@ -39,7 +50,10 @@
 
   &__accreditation {
     padding: 0 1rem;
-    text-align: right;
+    text-align: left;
+    @include breakpoint("md") {
+      text-align: right;
+    }
 
     p {
       font-size: inherit;

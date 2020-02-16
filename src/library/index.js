@@ -27,7 +27,8 @@ import {
 
 import {
   CardBlock,
-  GalleryFull
+  GalleryFull,
+  Page
 } from "./03-organisms"
 
 
@@ -45,6 +46,7 @@ export {
   ImageLoader,
   LinkButton,
   MainNav,
+  Page,
   PageNav,
   RichText,
   SideNav,

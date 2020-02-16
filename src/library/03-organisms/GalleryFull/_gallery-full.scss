@@ -59,7 +59,7 @@
   .cover-image {
     width: 100%;
     @include breakpoint("lg") {
-      max-width: 60vw;
+      max-width: 70vw;
     }
     margin: 0 auto;
     box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .65);

@@ -40,7 +40,7 @@ const Footers = ({
   siteMapLinks
 }) => {
   // consume theme and set styles
-  const { colors, fontFamilies, fontSizes, fontWeights } = useContext(ThemeContext)
+  const { colors, fontFamilies, fontSizes } = useContext(ThemeContext)
   const footerStyles = {
     backgroundColor: colors.dark
   }
