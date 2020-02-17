@@ -30,6 +30,7 @@ import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import { CoverImage } from '../../01-atoms'
+import { DOWN_CHEVRON } from '../../demo/assets'
 
 const HeroGallery = ({
   additionalClasses,
@@ -55,6 +56,11 @@ const HeroGallery = ({
     height: gallerySize.height
   }
 
+  const handleScroll = () => {
+    const galleryHeight = document.querySelector('.hero-gallery').clientHeight
+    window.scrollTo(0, (galleryHeight - 32))
+  }
+
   const classes = ["hero-gallery", ...additionalClasses]
   return (
     <section style={ galleryStyles } className={`${classes.join(" ")}`}>
@@ -73,6 +79,7 @@ const HeroGallery = ({
           )
         })
       }
+      <img onClick={handleScroll} className="down-chevron" src={ DOWN_CHEVRON } alt="chevron indicating downward scoll" />
     </section>
   )
 }

@@ -137,8 +137,6 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 }
 
 .main-nav--dark {
-  box-shadow: $menu-shadow;
-
   .main-nav__controls a {
     color: $color--light;
   }
@@ -195,6 +193,8 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 .nav-wrapper--dark {
   height: $menu-height--short;
   background-color: $color--dark;
+  box-shadow: $menu-shadow;
+  border: 1px solid $color--dark;
 }
 
 .nav-wrapper--light {

@@ -25,7 +25,8 @@ const Title = ({
   //consume context and set styles
   const { colors } = useContext(ThemeContext)
   const underlineStyles = {
-    backgroundColor: colors[underlineColor]
+    backgroundColor: colors[underlineColor],
+    width: titleText.length < 20 ? "104%" : "52%"
   }
   const styles = { ...scopedStyles }
   // validate title, checks titleLevel is within range and that titleText is not

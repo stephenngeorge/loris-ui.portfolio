@@ -25,7 +25,6 @@ const ImageLoader = ({
   useEffect(() => {
     const componentImage = document.querySelector(`#${imageId}`)
     if (componentImage !== null && componentImage !== undefined) {
-      console.log(imageSrc)
       const targetImage = new Image()
       targetImage.onload = () => {
         setIsLoading(false)

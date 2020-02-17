@@ -37,7 +37,10 @@
     }
   
     .static-gallery__images {
-      height: 56rem;
+      height: 48rem;
+      @include breakpoint("lg") {
+        height: 56rem;
+      }
       max-height: 100vh;
       overflow: scroll;
   

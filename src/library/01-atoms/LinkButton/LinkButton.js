@@ -58,7 +58,7 @@ const LinkButton = ({
           e.target.style.backgroundColor = colors[buttonBgColor]
           e.target.style.color = colors[buttonColor]
         }
-        else e.target.style.filter = "saturate(150%)"
+        else e.target.style.filter = "saturate(60%)"
     }
     
   }

@@ -6,6 +6,7 @@
  */
 import CAMERA_PLACEHOLDER from './camera_placeholder.svg'
 import CLOCK_ICON from './wall-clock.svg'
+import DOWN_CHEVRON from './down-chevron.svg'
 import FACEBOOK_LOGO from './facebook-logo.svg'
 import SENT_MAIL_ICON from './sent-mail.svg'
 import TWITTER_LOGO from './twitter-logo.svg'
@@ -31,6 +32,7 @@ export {
   // export icons
   CAMERA_PLACEHOLDER,
   CLOCK_ICON,
+  DOWN_CHEVRON,
   FACEBOOK_LOGO,
   SENT_MAIL_ICON,
   TWITTER_LOGO,
