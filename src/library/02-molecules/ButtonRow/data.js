@@ -14,19 +14,13 @@ const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
   rowColor: "main",
-  rowWidth: "very-narrow",
+  rowWidth: "narrow",
   buttons: [
     {
       buttonLink: "/contact",
       buttonLinkVariation: "internal",
       buttonOutline: false,
-      buttonText: "Get in touch",
-    },
-    {
-      buttonLink: "/contact#events",
-      buttonLinkVariation: "internal",
-      buttonOutline: true,
-      buttonText: "Upcoming events",
+      buttonText: "Buy images",
     }
   ]
 }

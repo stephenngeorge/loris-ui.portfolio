@@ -45,6 +45,10 @@ const Themer = ({
     iconSizes: {
       ...defaultTheme.iconSizes,
       ...theme.iconSizes
+    },
+    layout: {
+      ...defaultTheme.layout,
+      ...theme.layout
     }
   }
   

@@ -23,11 +23,12 @@ const PageNav = ({
   scopedStyles
 }) => {
   // consume theme and set styles
-  const { colors, fontFamilies, fontWeights } = useContext(ThemeContext)
+  const { colors, fontFamilies, fontWeights, layout } = useContext(ThemeContext)
   const navStyles = {
     color: colors.dark,
     fontFamily: fontFamilies.serif,
     fontWeight: fontWeights.heavy,
+    padding: layout.spacing_md,
     ...scopedStyles
   }
 

@@ -8,12 +8,15 @@
  * rich-text styled div.
  * Both components within Text Section are optional and will not generate
  * any markup if their respective props are empty or undefined.
+ * 
  */
 
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 
 import { RichText, Title } from '../../01-atoms'
+
+import { ThemeContext } from '../../00-protons/Themer/Themer'
 
 const TextSection = ({
   additionalClasses,
@@ -22,9 +25,15 @@ const TextSection = ({
   titleText,
   underlineColor
 }) => {
+  // consume theme and set styles
+  const { layout } = useContext(ThemeContext)
+  const sectionStyles = {
+    padding: `${layout.spacing_lg} 0`
+  }
+
   const classes = ["text-section", ...additionalClasses]
   return (
-    <section className={`${classes.join(" ")}`}>
+    <section style={ sectionStyles } className={`${classes.join(" ")}`}>
       {
         !!titleText &&
         <Title  titleLevel={ titleLevel }

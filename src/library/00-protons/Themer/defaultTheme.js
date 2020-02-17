@@ -77,6 +77,20 @@ const fontWeights = {
 
 /// *** *** ***
 /// ----------
+/// LAYOUT
+/// ----------
+/// css: padding, margin
+/// @see https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+/// @see https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+const layout = {
+  spacing_sm: "1rem",
+  spacing_md: "2rem",
+  spacing_lg: "3.5rem",
+  spacing_xl: "5rem"
+}
+
+/// *** *** ***
+/// ----------
 /// VARIABLES
 /// ----------
 const iconSizes = {
@@ -94,7 +108,8 @@ const defaultTheme = {
   fontFamilies,
   fontSizes,
   fontWeights,
-  iconSizes
+  iconSizes,
+  layout
 }
 
 export default defaultTheme
