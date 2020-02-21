@@ -38,6 +38,7 @@ const PageNav = ({
 
   const classes = [
     "page-nav",
+    "text-container--narrow",
     ...additionalClasses
   ]
   return (

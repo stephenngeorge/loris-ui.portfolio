@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "loriss": "^3.1.4",
+    "loriss": "^3.3.2",
     "object-fit-polyfill": "^0.1.0"
   },
   "scripts": {
