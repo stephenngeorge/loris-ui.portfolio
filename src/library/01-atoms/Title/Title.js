@@ -8,7 +8,7 @@
  * highlight that covers half the height of the text
  */
 
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import * as errorTypes from '../../errorTypes'
@@ -22,11 +22,29 @@ const Title = ({
   titleText,
   underlineColor
 }) => {
+  useEffect(() => {
+    const animateUnderline = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const underline = entry.target.querySelector('.underline')
+          titleText.length < 20 ?
+          underline.classList.add('title-underline-half--medium') :
+          underline.classList.add('title-underline-full--medium')
+        }
+      })
+    }
+    
+    const options = { threshold: .9 }
+    const observer = new IntersectionObserver(animateUnderline, options)
+    const titles = Array.from(document.querySelectorAll('.title'))
+    if (titles.length > 0) titles.forEach(title => observer.observe(title))
+  }, [titleText])
+  
   //consume context and set styles
   const { colors } = useContext(ThemeContext)
   const underlineStyles = {
     backgroundColor: colors[underlineColor],
-    width: titleText.length < 20 ? "104%" : "52%"
+    width: "0"
   }
   const styles = { ...scopedStyles }
   // validate title, checks titleLevel is within range and that titleText is not
