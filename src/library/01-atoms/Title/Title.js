@@ -38,6 +38,8 @@ const Title = ({
     const observer = new IntersectionObserver(animateUnderline, options)
     const titles = Array.from(document.querySelectorAll('.title'))
     if (titles.length > 0) titles.forEach(title => observer.observe(title))
+
+    return () => titles.forEach(title => observer.unobserve(title))
   }, [titleText])
   
   //consume context and set styles

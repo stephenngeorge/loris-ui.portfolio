@@ -30,6 +30,8 @@ const RichText = ({
     const observer = new IntersectionObserver(animateText, options)
     const textBlocks = Array.from(document.querySelectorAll('.rich-text'))
     if (textBlocks.length > 0) textBlocks.forEach(block => observer.observe(block))
+
+    return () => textBlocks.forEach(block => observer.unobserve(block))
   }, [])
 
   const styles = { ...scopedStyles }

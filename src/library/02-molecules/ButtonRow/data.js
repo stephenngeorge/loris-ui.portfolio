@@ -21,6 +21,12 @@ const data = {
       buttonLinkVariation: "internal",
       buttonOutline: false,
       buttonText: "Buy images",
+    },
+    {
+      buttonLink: "/contact",
+      buttonLinkVariation: "internal",
+      buttonOutline: true,
+      buttonText: "Get in touch",
     }
   ]
 }

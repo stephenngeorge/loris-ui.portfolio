@@ -10,7 +10,7 @@
  * are accepted by the button atom.
  */
 
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import { LinkButton } from '../../01-atoms'
@@ -25,6 +25,29 @@ const ButtonRow = ({
   rowWidth,
   scopedStyles
 }) => {
+  useEffect(() => {
+    const buttonRow = document.querySelector('.button-row')
+    const underline = buttonRow.querySelector('.underline')
+    const animateButtonRow = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // get buttons
+          const buttons = Array.from(buttonRow.querySelectorAll('.link-button'))
+          buttons.forEach((btn, i) => {
+            btn.style.animationDelay = `.${i * 2}s`
+            btn.classList.add('slide-from-bottom__fade-in--medium')
+            underline.classList.add('scale-in-underline')
+          })
+        }
+      })
+    }
+    const options = { threshold: 1 }
+    const observer = new IntersectionObserver(animateButtonRow, options)
+    observer.observe(buttonRow)
+
+    return () => observer.unobserve(buttonRow)
+  })
+
   // consume theme and set styles
   const { colors } = useContext(ThemeContext)
   const underlineStyles = {
