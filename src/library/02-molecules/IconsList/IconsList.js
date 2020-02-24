@@ -14,7 +14,7 @@
  * }
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 
 import { Icon } from '../../01-atoms'
@@ -26,6 +26,26 @@ const IconsList = ({
   direction,
   icons
 }) => {
+  useEffect(() => {
+    const animateIconsList = entries => {
+      entries.forEach(entry =>  {
+        if (entry.isIntersecting) {
+          // get icons
+          const icons = Array.from(entry.target.querySelectorAll('.icon'))
+          icons.forEach((icon, i) => {
+            icon.style.animationDelay = `.${i * 2}s`
+            icon.classList.add('slide-from-right__fade-in--medium')
+          })
+        }
+      })
+    }
+    const lists = Array.from(document.querySelectorAll('.icons-list'))
+    const options = { threshold: .6 }
+    const observer = new IntersectionObserver(animateIconsList, options)
+    lists.forEach(list => observer.observe(list))
+
+    return () => lists.forEach(list => observer.unobserve(list))
+  }, [])
   
   const validateList = (direction) => {
     let errors = []
