@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { MainNav } from './library'
-import { MainNavData } from './library/data'
+import { PageNav } from './library'
+import { PageNavData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <MainNav { ...MainNavData } />
+      <PageNav { ...PageNavData } />
     </div>
   </Router>
 )

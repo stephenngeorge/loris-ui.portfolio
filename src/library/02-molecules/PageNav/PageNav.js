@@ -10,7 +10,7 @@
  * 
  */
 
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import PropTypes from "prop-types"
 
@@ -22,6 +22,28 @@ const PageNav = ({
   links,
   scopedStyles
 }) => {
+  // animate page nav
+  useEffect(() => {
+    const animatePageNav = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const links = Array.from(document.querySelectorAll('.page-nav__link'))
+          links.forEach((link, i) => {
+            link.style.animationDelay = `.${i * 2}s`
+            link.classList.add('slide-from-top__fade-in--medium')
+          })
+        }
+      })
+    }
+
+    const options = { threshold: .6 }
+    const observer = new IntersectionObserver(animatePageNav, options)
+    const pageNav = document.querySelector('.page-nav')
+    observer.observe(pageNav)
+
+    return () => observer.unobserve(pageNav)
+  }, [])
+
   // consume theme and set styles
   const { colors, fontFamilies, fontWeights, layout } = useContext(ThemeContext)
   const navStyles = {

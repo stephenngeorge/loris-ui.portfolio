@@ -55,7 +55,7 @@ const MainNav = ({
 
       return () => observer.unobserve(mainNav)
     }
-  }, [window.innerWidth])
+  }, [])
 
   // handle color theme
   useEffect(() => {
