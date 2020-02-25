@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { IconsList } from './library'
-import { IconsListData } from './library/data'
+import { MainNav } from './library'
+import { MainNavData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <IconsList { ...IconsListData } />
+      <MainNav { ...MainNavData } />
     </div>
   </Router>
 )

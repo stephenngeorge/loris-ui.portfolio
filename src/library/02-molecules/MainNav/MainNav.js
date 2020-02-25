@@ -30,6 +30,34 @@ const MainNav = ({
 }) => {
   const [colorTheme, setColorTheme] = useState("dark")
   const location = useLocation()
+
+  // animate nav
+  useEffect(() => {
+    if (window.innerWidth >= 992) {
+      const animateNav = entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // get DOM nodes
+            const menuLinks = Array.from(mainNav.querySelectorAll('a'))
+            const title = document.querySelector('.site-title')
+            title.classList.add('slide-from-left__fade-in--medium')
+            menuLinks.forEach((link, i) => {
+              link.style.animationDelay = `.${i * 2}s`
+              link.classList.add('slide-from-top__fade-in--medium')
+            })
+          }
+        })
+      }
+      const mainNav = document.querySelector('.main-nav__menu')
+      const options = { threshold: 1 }
+      const observer = new IntersectionObserver(animateNav, options)
+      observer.observe(mainNav)
+
+      return () => observer.unobserve(mainNav)
+    }
+  }, [window.innerWidth])
+
+  // handle color theme
   useEffect(() => {
     const selectColorTheme = () => {
       switch (location.pathname) {
@@ -88,13 +116,14 @@ const MainNav = ({
   const classes = [
     "main-nav",
     `main-nav--${colorTheme}`,
+    window.innerWidth >= 992 ? 'main-nav--wide' : 'main-nav--narrow',
     ...additionalClasses
   ]
   return (
     <div className={`nav-wrapper--${colorTheme}`}>
       <div style={ menuStyles } className={`${classes.join(" ")}`}>
         <div className="main-nav__controls">
-          <Link onClick={ () => controlMenu('remove') } to="/">{ siteTitle }</Link>
+          <Link className="site-title" onClick={ () => controlMenu('remove') } to="/">{ siteTitle }</Link>
           <button onClick={ () => controlMenu('toggle') } className="main-nav__menu-icon">
             <div className="main-nav__menu-icon--top"></div>
             <div className="main-nav__menu-icon--middle"></div>
