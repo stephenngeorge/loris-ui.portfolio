@@ -13,7 +13,7 @@
  * }
  */
 
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import PropTypes from "prop-types"
 
@@ -25,6 +25,27 @@ const SideNav = ({
   linkColor,
   menuItems
 }) => {
+  // animate side nav
+  useEffect(() => {
+    const sideNav = document.querySelector('.side-nav')
+    const animateSideNav = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sideNavLinks = Array.from(sideNav.querySelectorAll('a'))
+          sideNavLinks.forEach((link, i) => {
+            link.style.animationDelay = `.${i * 2}s`
+            link.classList.add('slide-from-right__fade-in--slow')
+          })
+        }
+      })
+    }
+    const options = { threshold: .5 }
+    const observer = new IntersectionObserver(animateSideNav, options)
+    observer.observe(sideNav)
+
+    return () => observer.unobserve(sideNav)
+  }, [])
+
   // consume theme and set styles
   const { colors, fontFamilies, fontSizes } = useContext(ThemeContext)
   const navStyles = {
