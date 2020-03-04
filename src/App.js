@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { SideNav } from './library'
-import { SideNavData } from './library/data'
+import { StaticGallery } from './library'
+import { StaticGalleryData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <SideNav { ...SideNavData } />
+      <StaticGallery { ...StaticGalleryData } />
     </div>
   </Router>
 )
