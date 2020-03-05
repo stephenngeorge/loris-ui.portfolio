@@ -11,7 +11,7 @@
  * on the x-axis becomes scrollable.
  */
 
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import { ThemeContext } from '../../00-protons/Themer/Themer'
@@ -22,6 +22,28 @@ const CardBlock = ({
   children,
   rowContains
 }) => {
+  // animate cards
+  useEffect(() => {
+    const cardBlock = document.querySelector('.card-block')
+    const animateCardBlock = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // get cards
+          const cards = Array.from(cardBlock.querySelectorAll('.card'))
+          cards.forEach((card, i) => {
+            card.style.animationDelay = `${i * 100}ms`
+            card.classList.add('slide-from-right__fade-in--medium')
+          })
+        }
+      })
+    }
+    const options = { threshold: .6 }
+    const observer = new IntersectionObserver(animateCardBlock, options)
+    observer.observe(cardBlock)
+
+    return () => observer.unobserve(cardBlock)
+  }, [])
+
   // consume theme and set styles
   const { colors } = useContext(ThemeContext)
   const blockStyles = {
@@ -35,7 +57,9 @@ const CardBlock = ({
   ]
   return (
     <section style={ blockStyles } className={`${classes.join(" ")}`}>
-      { children }
+      <div className="card-block__card-wrapper">
+        { children }
+      </div>
     </section>
   )
 }

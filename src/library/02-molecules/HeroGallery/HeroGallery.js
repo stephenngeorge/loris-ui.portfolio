@@ -41,14 +41,12 @@ const HeroGallery = ({
   const [imageInView, setImageInView] = useState(randomIndex)
 
   useEffect(() => {
-    let randomIndex = Math.floor(Math.random() * Math.floor(images.length))
-    if (randomIndex === imageInView) {
-      if (imageInView === images.length - 1) randomIndex = 0
-      randomIndex += 1
-    }
+    let newIndex = imageInView + 1
+    if (newIndex === images.length) newIndex = 0
+    
     // the duration at the end here should match the 
     // animation duration set in the scss file (.image-cross-fade)
-    setTimeout(() => setImageInView(randomIndex), 7400)
+    setTimeout(() => setImageInView(newIndex), 7400)
   }, [imageInView, images])
 
   const galleryStyles = {

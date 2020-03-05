@@ -1,7 +1,9 @@
-.card-block {
+.card-block__card-wrapper {
   display: flex;
   flex-flow: row wrap;
   padding: 2rem;
+  max-width: 1248px;
+  margin: 0 auto;
 
   .card {
     margin: 1rem;

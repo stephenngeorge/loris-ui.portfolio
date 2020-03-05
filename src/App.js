@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { StaticGallery } from './library'
-import { StaticGalleryData } from './library/data'
+import { HeroGallery } from './library'
+import { HeroGalleryData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
-      <StaticGallery { ...StaticGalleryData } />
+      <HeroGallery { ...HeroGalleryData } />
     </div>
   </Router>
 )
