@@ -36,10 +36,10 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
     .site-logo {
       height: 2rem;
       margin-right: 1rem;
-      transition: transform .3s ease-out;
+      transition: transform .4s cubic-bezier(.17, .67, .75, 1.36);
     }
     &:hover .site-logo {
-      transform: rotate(180deg);
+      transform: rotate(135deg);
     }
   }
 
