@@ -30,6 +30,19 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
     text-decoration: none;
   }
 
+  .site-title {
+    display: flex;
+    align-items: center;
+    .site-logo {
+      height: 2rem;
+      margin-right: 1rem;
+      transition: transform .3s ease-out;
+    }
+    &:hover .site-logo {
+      transform: rotate(180deg);
+    }
+  }
+
   // .main-nav__controls contains branding link &
   // menu icon button for toggling menu on small devices.
   &__controls {

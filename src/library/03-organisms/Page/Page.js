@@ -24,6 +24,7 @@ const Page = ({
   children,
   iconsListData,
   menuLinks,
+  siteLogo,
   siteMapLinks,
   siteTitle
 }) => {
@@ -46,7 +47,7 @@ const Page = ({
   return (
     <div className={`${classes.join(" ")}`}>
       <header>
-        <MainNav menuLinks={ menuLinks } siteTitle={ siteTitle } />
+        <MainNav menuLinks={ menuLinks } siteTitle={ siteTitle } siteLogo={ siteLogo } />
       </header>
 
       <main>
@@ -69,6 +70,7 @@ Page.propTypes = {
   additionalClasses: PropTypes.array,
   iconsListData: PropTypes.object,
   menuLinks: PropTypes.array.isRequired,
+  siteLogo: PropTypes.string,
   siteMapLinks: PropTypes.array,
   siteTitle: PropTypes.string.isRequired
 }

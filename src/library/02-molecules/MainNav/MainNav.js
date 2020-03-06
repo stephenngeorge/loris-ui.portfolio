@@ -26,6 +26,7 @@ const MainNav = ({
   additionalClasses,
   menuLinks,
   scopedStyles,
+  siteLogo,
   siteTitle
 }) => {
   const [colorTheme, setColorTheme] = useState("dark")
@@ -123,7 +124,13 @@ const MainNav = ({
     <div className={`nav-wrapper--${colorTheme}`}>
       <div style={ menuStyles } className={`${classes.join(" ")}`}>
         <div className="main-nav__controls">
-          <Link className="site-title" onClick={ () => controlMenu('remove') } to="/">{ siteTitle }</Link>
+          <Link className="site-title" onClick={ () => controlMenu('remove') } to="/">
+            {
+              siteLogo &&
+              <img src={ siteLogo } alt="Neil George Photography Logo" className="site-logo" />
+            }
+            { siteTitle }
+          </Link>
           <button onClick={ () => controlMenu('toggle') } className="main-nav__menu-icon">
             <div className="main-nav__menu-icon--top"></div>
             <div className="main-nav__menu-icon--middle"></div>
@@ -144,6 +151,7 @@ MainNav.propTypes = {
   additionalClasses: PropTypes.array,
   menuLinks: PropTypes.array.isRequired,
   scopedStyles: PropTypes.object,
+  siteLogo: PropTypes.string,
   siteTitle: PropTypes.string.isRequired
 }
 

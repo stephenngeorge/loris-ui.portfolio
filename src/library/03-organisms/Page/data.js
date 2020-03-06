@@ -10,7 +10,7 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { FACEBOOK_LOGO, TWITTER_LOGO, SENT_MAIL_ICON } from '../../demo/assets'
+import { FACEBOOK_LOGO, NGPHOTO_LOGO_MARK, TWITTER_LOGO, SENT_MAIL_ICON } from '../../demo/assets'
 
 const data = {
   // add props here that your component will expect in the format:
@@ -36,6 +36,7 @@ const data = {
     { path: "/galleries", label: "Galleries" },
     { path: "/contact", label: "Contact" }
   ],
+  siteLogo: NGPHOTO_LOGO_MARK,
   siteTitle: "Neil George Photography"
 }
 
