@@ -26,6 +26,7 @@ import { SideNav } from '../../02-molecules'
 const StaticGallery = ({
   additionalClasses,
   images,
+  sideNavMenuItems,
   titleText,
   titleLevel,
   underlineColor
@@ -36,32 +37,7 @@ const StaticGallery = ({
       <SideNav
         direction="column"
         linkColor="secondary"
-        menuItems={[
-          {
-            label: 'Animals',
-            link: '/galleries/animals'
-          },
-          {
-            label: 'Birds',
-            link: '/galleries/birds'
-          },
-          {
-            label: 'Insects',
-            link: '/galleries/insects'
-          },
-          {
-            label: 'Land and Sea',
-            link: '/galleries/land-and-sea'
-          },
-          {
-            label: 'Plants',
-            link: '/galleries/plants'
-          },
-          {
-            label: 'Urban and Abstract',
-            link: '/'
-          }
-        ]}
+        menuItems={ sideNavMenuItems }
       />
       <div className="static-gallery__gallery-content">
         <Title
@@ -82,6 +58,7 @@ const StaticGallery = ({
 StaticGallery.propTypes = {
   additionalClasses: PropTypes.array,
   images: PropTypes.array.isRequired,
+  sideNavMenuItems: PropTypes.array,
   titleText: PropTypes.string.isRequired,
   titleLevel: PropTypes.number,
   underlineColor: PropTypes.string
@@ -89,6 +66,7 @@ StaticGallery.propTypes = {
 
 StaticGallery.defaultProps = {
   additionalClasses: [],
+  sideNavMenuItems: [],
   titleLevel: 2,
   underlineColor: "main"
 }

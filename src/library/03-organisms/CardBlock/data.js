@@ -10,10 +10,13 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
+import { NGPHOTO_LOGO_MARK_BW } from '../../../library/demo/assets'
+
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
   backgroundColor: "grey",
+  loadingImage: NGPHOTO_LOGO_MARK_BW,
   rowContains: 3,
   wrapOn: "row"
 }

@@ -82,6 +82,14 @@ const data = {
       imageSrc: NGPHOTO_TEST_9
     }
   ],
+  sideNavMenuItems: [
+    { label: 'Animals', link: '/galleries/animals' },
+    { label: 'Birds', link: '/galleries/birds' },
+    { label: 'Insects', link: '/galleries/insects' },
+    { label: 'Land and Sea', link: '/galleries/land-and-sea' },
+    { label: 'Plants', link: '/galleries/plants' },
+    { label: 'Urban and Abstract', link: '/' }
+  ],
   titleText: "Latest work",
   titleLevel: 2,
   underlineColor: "main"

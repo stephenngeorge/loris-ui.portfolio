@@ -20,6 +20,7 @@ const CardBlock = ({
   additionalClasses,
   backgroundColor,
   children,
+  loadingImage,
   rowContains
 }) => {
   // animate cards
@@ -55,9 +56,14 @@ const CardBlock = ({
     !!rowContains ? `card-block--row-${rowContains}` : '',
     ...additionalClasses
   ]
+  console.log(children)
   return (
     <section style={ blockStyles } className={`${classes.join(" ")}`}>
       <div className="card-block__card-wrapper">
+        {
+          (children === undefined && loadingImage) &&
+          <img src={ loadingImage } alt="card data is loading" className="loading-image" />
+        }
         { children }
       </div>
     </section>
@@ -68,6 +74,7 @@ CardBlock.propTypes = {
   additionalClasses: PropTypes.array,
   backgroundColor: PropTypes.string,
   columnContains: PropTypes.number,
+  loadingImage: PropTypes.string,
   rowContains: PropTypes.number,
 }
 

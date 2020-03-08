@@ -23,7 +23,8 @@ const SideNav = ({
   additionalClasses,
   direction,
   linkColor,
-  menuItems
+  menuItems,
+  scopedStyles
 }) => {
   // animate side nav
   useEffect(() => {
@@ -51,7 +52,8 @@ const SideNav = ({
   const navStyles = {
     color: colors[linkColor],
     fontFamily: fontFamilies.serif,
-    fontSize: fontSizes.lead
+    fontSize: fontSizes.lead,
+    ...scopedStyles
   }
 
   const validateMenu = direction => {
@@ -93,13 +95,15 @@ SideNav.propTypes = {
   additionalClasses: PropTypes.array,
   direction: PropTypes.string,
   linkColor: PropTypes.string,
-  menuItems: PropTypes.array.isRequired
+  menuItems: PropTypes.array.isRequired,
+  scopedStyles: PropTypes.object
 }
 
 SideNav.defaultProps = {
   additionalClasses: [],
   direction: "column",
-  linkColor: "main"
+  linkColor: "main",
+  scopedStyles: {}
 }
 
 export default SideNav

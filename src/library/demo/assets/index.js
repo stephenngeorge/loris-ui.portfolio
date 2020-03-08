@@ -9,6 +9,7 @@ import CLOCK_ICON from './wall-clock.svg'
 import DOWN_CHEVRON from './down-chevron.svg'
 import FACEBOOK_LOGO from './facebook-logo.svg'
 import NGPHOTO_LOGO_MARK from './NGPhoto_Logo_Mark.svg'
+import NGPHOTO_LOGO_MARK_BW from './NGPhoto_Logo_Mark_B&W.svg'
 import SENT_MAIL_ICON from './sent-mail.svg'
 import TWITTER_LOGO from './twitter-logo.svg'
 
@@ -36,6 +37,7 @@ export {
   DOWN_CHEVRON,
   FACEBOOK_LOGO,
   NGPHOTO_LOGO_MARK,
+  NGPHOTO_LOGO_MARK_BW,
   SENT_MAIL_ICON,
   TWITTER_LOGO,
   // export images

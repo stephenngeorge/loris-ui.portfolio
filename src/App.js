@@ -1,14 +1,24 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { HeroGallery, Page } from './library'
-import { HeroGalleryData, PageData } from './library/data'
+import { Card, CardBlock, Page } from './library'
+import { CardData, CardBlockData, PageData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
       <Page { ...PageData }>
-        <HeroGallery { ...HeroGalleryData } />
+        <CardBlock { ...CardBlockData }>
+          <Card { ...CardData }>
+            <p>some text some text some text some text some text</p>
+          </Card>
+          <Card { ...CardData }>
+            <p>some text some text some text some text some text</p>
+          </Card>
+          <Card { ...CardData }>
+            <p>some text some text some text some text some text</p>
+          </Card>
+        </CardBlock>
       </Page>
     </div>
   </Router>
