@@ -10,17 +10,9 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { WESTMINSTER_STATION } from '../../../demo/assets'
-
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
-  coverImageId: "test-image",
-  imageAlt: "abstract photograph of Westminster tube station",
-  imageId: "westminster-station",
-  imagePos: { x: "50%", y: "50%" },
-  imageSize: { width: "100%", height: "100vh" },
-  imageSrc: WESTMINSTER_STATION
 }
 
 export {
