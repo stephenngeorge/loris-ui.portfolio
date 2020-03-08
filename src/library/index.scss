@@ -1,7 +1,7 @@
-@import './library/variables.scss';
+@import './variables.scss';
 @import 'loriss';
-@import './library/mixins.scss';
-@import './library/library.scss';
+@import './mixins.scss';
+@import './library.scss';
 
 * {
   font-size: $font-size-base;
