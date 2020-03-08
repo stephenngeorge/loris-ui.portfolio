@@ -10,7 +10,7 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { CAMERA_PLACEHOLDER, NGPHOTO_TEST_1, NGPHOTO_TEST_2, NGPHOTO_TEST_3 } from '../../demo/assets'
+import { CAMERA_PLACEHOLDER, NGPHOTO_TEST_1, NGPHOTO_TEST_2, NGPHOTO_TEST_3 } from '../../../demo/assets'
 
 const data = {
   // add props here that your component will expect in the format:

@@ -1,6 +1,6 @@
 {
   "name": "loris-ui.portfolio",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "dependencies": {
     "loriss": "^3.3.2",
     "object-fit-polyfill": "^0.1.0"

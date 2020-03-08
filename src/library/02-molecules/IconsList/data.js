@@ -10,7 +10,7 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { FACEBOOK_LOGO, TWITTER_LOGO } from '../../demo/assets'
+import { FACEBOOK_LOGO, TWITTER_LOGO } from '../../../demo/assets'
 
 const data = {
   // add props here that your component will expect in the format:

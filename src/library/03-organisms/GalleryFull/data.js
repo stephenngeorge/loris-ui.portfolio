@@ -21,7 +21,7 @@ import {
   NGPHOTO_TEST_7,
   NGPHOTO_TEST_8,
   NGPHOTO_TEST_9
-} from '../../demo/assets'
+} from '../../../demo/assets'
 
 const data = {
   // add props here that your component will expect in the format:

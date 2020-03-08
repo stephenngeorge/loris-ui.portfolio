@@ -10,7 +10,7 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { CLOCK_ICON } from '../../demo/assets'
+import { CLOCK_ICON } from '../../../demo/assets'
 
 const data = {
   // add props here that your component will expect in the format:
