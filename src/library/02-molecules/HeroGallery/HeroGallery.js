@@ -30,7 +30,7 @@ import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import { CoverImage } from '../../01-atoms'
-import { DOWN_CHEVRON } from '../../demo/assets'
+import DOWN_CHEVRON from './down-chevron.svg'
 
 const HeroGallery = ({
   additionalClasses,

@@ -10,9 +10,57 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
+import { FACEBOOK_LOGO, TWITTER_LOGO, SENT_MAIL_ICON } from '../../../demo/assets'
+
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  accreditationLink: {
+    url: "https://github.com/stephenngeorge",
+    text: "Stephen Pal-George"
+  },
+  accreditationText: "Designed and built by ",
+  iconsListData: {
+    direction: "row",
+    icons: [
+      {
+        name: 'facebook',
+        size: 'sm',
+        src: FACEBOOK_LOGO,
+        url: 'https://www.facebook.com'
+      },
+      {
+        name: 'twitter',
+        size: 'sm',
+        src: TWITTER_LOGO,
+        url: 'https://twitter.com'
+      },
+      {
+        name: 'email',
+        size: 'sm',
+        src: SENT_MAIL_ICON,
+        url: 'https://google.co.uk'
+      }
+    ] 
+  },
+  siteMapLinks: [
+    {
+      path: "/",
+      label: "Home"
+    },
+    {
+      path: "/buy",
+      label: "Buy"
+    },
+    {
+      path: "/galleries",
+      label: "Galleries"
+    },
+    {
+      path: "/contact",
+      label: "Contact"
+    }
+  ]
 }
 
 export {

@@ -10,9 +10,26 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
+import { FACEBOOK_LOGO, TWITTER_LOGO } from '../../../demo/assets'
+
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  direction: "column",
+  icons: [
+    {
+      name: 'facebook',
+      size: 'md',
+      src: FACEBOOK_LOGO,
+      url: 'https://www.facebook.com'
+    },
+    {
+      name: 'twitter',
+      size: 'md',
+      src: TWITTER_LOGO,
+      url: 'https://twitter.com'
+    }
+  ]
 }
 
 export {
