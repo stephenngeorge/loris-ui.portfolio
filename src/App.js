@@ -18,6 +18,12 @@ const App = () => (
           <Card { ...CardData }>
             <p>some text some text some text some text some text</p>
           </Card>
+          <Card { ...CardData }>
+            <p>some text some text some text some text some text</p>
+          </Card>
+          <Card { ...CardData }>
+            <p>some text some text some text some text some text</p>
+          </Card>
         </CardBlock>
       </Page>
     </div>

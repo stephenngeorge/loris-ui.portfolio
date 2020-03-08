@@ -9,7 +9,7 @@
  * Each item in the menuItems array should be of shape:
  * {
  * ..label: String,
- * ..link: String (valid path to an App route),
+ * ..path: String (valid path to an App route),
  * }
  */
 
@@ -81,7 +81,7 @@ const SideNav = ({
       <nav style={ navStyles } className={`${navClasses.join(" ")}`}>
         {
           menuItems.map(item => (
-            <Link key={ item.label } to={ item.link }>
+            <Link key={ item.label } to={ item.path }>
               { item.label }
             </Link>
           ))

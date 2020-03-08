@@ -56,7 +56,6 @@ const CardBlock = ({
     !!rowContains ? `card-block--row-${rowContains}` : '',
     ...additionalClasses
   ]
-  console.log(children)
   return (
     <section style={ blockStyles } className={`${classes.join(" ")}`}>
       <div className="card-block__card-wrapper">

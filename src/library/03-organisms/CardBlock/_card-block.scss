@@ -8,6 +8,9 @@
   .card {
     margin: 1rem;
     max-width: 100% !important;
+    @include breakpoint("lg") {
+      max-width: 50% !important;
+    }
     min-width: 15rem;
     flex-grow: 1;
 

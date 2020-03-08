@@ -67,7 +67,7 @@ const PageNav = ({
     <nav style={ navStyles } className={`${classes.join(" ")}`}>
       {
         links.map(link => (
-          <Link className={`page-nav__link page-nav__link--${linkHighlight}`} key={ link.label } to={ link.url }>
+          <Link className={`page-nav__link page-nav__link--${linkHighlight}`} key={ link.label } to={ link.path }>
             { link.label }
             <div style={ underlineStyles } className="underline"></div>
           </Link>

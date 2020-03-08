@@ -212,7 +212,7 @@ A secondary level navigation for navigating within a page
 
 **Props:**
 - linkHighlight [String]: name of one of the theme colors, to style the underline of an hover/active link,
-- links [Array]: each object in the array should have keys `label` and `url`
+- links [Array]: each object in the array should have keys `path` and `label`
 
 
 ### 02-molecules/SideNav
@@ -221,7 +221,7 @@ A secondary level navigation that sits at the side of a page.
 **Props:**
 - direction [String]: one of `column`, `row`, `column-reverse`, `row-reverse`,
 - linkColor [String]: the color that the links will display in,
-- menuItems [Array]: each object in the array should have keys `label` and `link`
+- menuItems [Array]: each object in the array should have keys `path` and `label`
 
 
 ### 02-molecules/StaticGallery
@@ -242,3 +242,40 @@ are supplied.
 - titleLevel [Number]: between 1 - 6 inclusive, determines the level of <h_> that should render the title,
 - titleText [String]: the text for the section title,
 - underlineColor [String]: one of the theme color names, determines the color of the title underline.
+
+
+### 03-organisms/CardBlock
+Component renders a selection of cards in rows. Cards as passed as children.
+
+**Props:**
+- backgroundColor [String]: name of one of the theme colors, sets the background of the section,
+- loadingImage [String]: filepath to an image to be rendered is there are no events to dispaly/events are loading,
+- rowContains [Number]: between 1 - 4 inclusive, determines how many cards should fit in a row before they break onto a second line
+
+
+### 03-organisms/GalleryFull
+A full page gallery component. This renders a collection of images in a horizontal,
+scrollable container. Clicking one of the images loads it into the large, focus-image
+area below.
+
+**Props:**
+- galleryColor [String]: one of the theme color names, determines the color that will be used across various aspects of the component,
+- images [Array]: each object in the array should contain the props for an image
+
+
+### 03-organisms/Page
+Page components wrap app content and display a consistent navigation and footer.
+The props are listed below, but not detailed since they would be repeats on component detailed above.
+
+**Props:**
+- accreditationLink [String],
+- accreditationText [String],
+- iconsListData [Object],
+- menuLinks [Array],
+- siteLogo [String],
+- siteMapLinks [Array],
+- siteTitle [String]
+
+
+Additionally, every component in the library can accept an `additionalClasses` component,
+for passing down extra class names that are rendered on the component's root DOM node.
