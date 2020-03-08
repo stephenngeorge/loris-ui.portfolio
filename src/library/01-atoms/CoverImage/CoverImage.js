@@ -50,7 +50,7 @@ const CoverImage = ({
     objectPosition: `${imagePos.x} ${imagePos.y}`
   }
 
-  const validateImage = (imagePos, imageSize, imageSrc) => {
+  const validateImage = (imagePos, imageSize) => {
     let errors = []
 
     let imagePosKeys = Object.keys(imagePos)
@@ -70,15 +70,6 @@ const CoverImage = ({
         message: "imageSize props must be an object containing 'width' and 'height'"
       })
     }
-  
-    let filepath = imageSrc.split('.')
-    if (["jpg", "jpeg", "png"].indexOf(filepath[filepath.length - 1]) < 0) {
-      errors.push({
-        type: errorTypes.UNALLOWED_FILE_TYPE,
-        source: "CoverImage > props.imageSrc",
-        message: "The image must be a '.jpg', '.jpeg' or '.png'. If you want to render an SVG, use the Icon component instead"
-      })
-    }
 
     for (const error of errors) {
       console.warn(`${error.type}: ${error.source}\n${error.message}`)
@@ -91,7 +82,7 @@ const CoverImage = ({
     isLoading ? "image-loading" : "",
     ...additionalClasses
   ]
-  return validateImage(imagePos, imageSize, imageSrc).length > 0 ? null : (
+  return validateImage(imagePos, imageSize).length > 0 ? null : (
     <div style={ styles } className={`${classes.join(" ")}`} id={ coverImageId }>
       <img  data-object-fit="cover"
             alt={ imageAlt }
