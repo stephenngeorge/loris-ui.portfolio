@@ -83,12 +83,12 @@ const data = {
     }
   ],
   sideNavMenuItems: [
-    { label: 'Animals', link: '/galleries/animals' },
-    { label: 'Birds', link: '/galleries/birds' },
-    { label: 'Insects', link: '/galleries/insects' },
-    { label: 'Land and Sea', link: '/galleries/land-and-sea' },
-    { label: 'Plants', link: '/galleries/plants' },
-    { label: 'Urban and Abstract', link: '/' }
+    { label: 'Animals', path: '/galleries/animals' },
+    { label: 'Birds', path: '/galleries/birds' },
+    { label: 'Insects', path: '/galleries/insects' },
+    { label: 'Land and Sea', path: '/galleries/land-and-sea' },
+    { label: 'Plants', path: '/galleries/plants' },
+    { label: 'Urban and Abstract', path: '/' }
   ],
   titleText: "Latest work",
   titleLevel: 2,

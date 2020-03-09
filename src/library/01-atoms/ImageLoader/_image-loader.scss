@@ -6,12 +6,12 @@
   }
 
   &--loading {
-    animation: loading-animation .3s infinite;
+    animation: loading-animation 3s infinite;
   }
 }
 // @todo check this works with a longer load
 @keyframes loading-animation {
   0% { transform: scale(1); }
-  40% { transform: scale(1.2); }
+  40% { transform: scale(1.05); }
   80%, 100% { transform: scale(1); }
 }

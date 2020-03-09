@@ -60,7 +60,7 @@ const CardBlock = ({
     <section style={ blockStyles } className={`${classes.join(" ")}`}>
       <div className="card-block__card-wrapper">
         {
-          (children === undefined && loadingImage) &&
+          ((children.length <= 0 || children === undefined) && loadingImage) &&
           <img src={ loadingImage } alt="card data is loading" className="loading-image" />
         }
         { children }
