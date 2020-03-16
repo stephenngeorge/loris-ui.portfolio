@@ -9,6 +9,7 @@ import {
   ImageLoader,
   LinkButton,
   RichText,
+  Spinner,
   Title
 } from "./01-atoms"
 
@@ -50,6 +51,7 @@ export {
   PageNav,
   RichText,
   SideNav,
+  Spinner,
   StaticGallery,
   TextSection,
   Themer,

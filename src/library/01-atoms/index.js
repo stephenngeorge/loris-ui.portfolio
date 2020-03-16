@@ -4,6 +4,7 @@ import Icon from './Icon/Icon'
 import ImageLoader from './ImageLoader/ImageLoader'
 import LinkButton from './LinkButton/LinkButton'
 import RichText from './RichText/RichText'
+import Spinner from './Spinner/Spinner'
 import Title from './Title/Title'
 
 export {
@@ -13,5 +14,6 @@ export {
   ImageLoader,
   LinkButton,
   RichText,
+  Spinner,
   Title
 }

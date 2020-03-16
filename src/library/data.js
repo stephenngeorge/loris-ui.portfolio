@@ -9,6 +9,7 @@ import { data as IconData } from './01-atoms/Icon/data'
 import { data as ImageLoaderData } from './01-atoms/ImageLoader/data'
 import { data as LinkButtonData } from './01-atoms/LinkButton/data'
 import { data as RichTextData } from './01-atoms/RichText/data'
+import { data as SpinnerData } from './01-atoms/Spinner/data'
 import { data as TitleData } from './01-atoms/Title/data'
 
 // import data objects from 02-molecules
@@ -35,6 +36,7 @@ export {
   ImageLoaderData,
   LinkButtonData,
   RichTextData,
+  SpinnerData,
   TitleData,
   ButtonRowData,
   CardData,
