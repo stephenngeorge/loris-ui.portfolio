@@ -10,9 +10,14 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
+import { NGPHOTO_LOGO_MARK } from '../../../demo/assets'
+
 const data = {
   // add props here that your component will expect in the format:
   // PropName: prop value
+  imageAlt: "loading indicator",
+  imageUrl: NGPHOTO_LOGO_MARK,
+  speed: "normal"
 }
 
 export {

@@ -10,7 +10,7 @@
 // and then an "aboutpage" object etc (or use whatever naming convention
 // you like!)
 
-import { CAMERA_PLACEHOLDER, NGPHOTO_TEST_2 } from '../../../demo/assets'
+import { NGPHOTO_LOGO_MARK_BW, NGPHOTO_TEST_2 } from '../../../demo/assets'
 
 const data = {
   // add props here that your component will expect in the format:
@@ -18,7 +18,7 @@ const data = {
   imageAlt: "abstract photo of Westminster underground station",
   imageId: "westminster-tube-station",
   imageSrc: NGPHOTO_TEST_2,
-  placeholderImageSrc: CAMERA_PLACEHOLDER
+  placeholderImageSrc: NGPHOTO_LOGO_MARK_BW
 }
 
 export {

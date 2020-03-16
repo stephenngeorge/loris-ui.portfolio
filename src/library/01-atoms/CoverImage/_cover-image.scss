@@ -8,3 +8,19 @@
     display: block;
   }
 }
+
+.cover-image.image-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 12rem;
+    object-fit: unset;
+    animation: cover-image-spinner 2s cubic-bezier(.17,.67,.06,1.21) infinite;
+  }
+}
+
+@keyframes cover-image-spinner {
+  0% { transform: rotate(0); }
+  70%, 100% { transform: rotate(180deg); }
+}
