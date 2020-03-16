@@ -9,7 +9,10 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 .main-nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 0 .5rem;
+  @include breakpoint("md") {
+    padding: 0 1.5rem;
+  }
   overflow: visible;
 
   position: fixed;
@@ -40,6 +43,14 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
     }
     &:hover .site-logo {
       transform: rotate(135deg);
+    }
+
+    p {
+      font-family: inherit;
+      display: none;
+      @include breakpoint("md") {
+        display: block;
+      }
     }
   }
 
@@ -83,7 +94,6 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
       left: 50%;
       width: 50%;
       height: .25rem;
-      border-radius: .125rem;
       background-color: $color--light;
       transform: translate(-50%, -50%);
       transition: width .2s ease;

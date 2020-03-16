@@ -46,7 +46,8 @@ const HeroGallery = ({
     
     // the duration at the end here should match the 
     // animation duration set in the scss file (.image-cross-fade)
-    setTimeout(() => setImageInView(newIndex), 7400)
+    const setImage = setTimeout(() => setImageInView(newIndex), 7400)
+    return () => clearTimeout(setImage)
   }, [imageInView, images])
 
   const galleryStyles = {

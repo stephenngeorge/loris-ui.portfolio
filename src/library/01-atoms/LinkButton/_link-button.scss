@@ -1,6 +1,9 @@
 .link-button {
   cursor: pointer;
-  padding: .7rem 1rem;
+  padding: .7rem .5rem;
+  @include breakpoint("md") {
+    padding: .7rem 1rem;
+  }
   text-decoration: none;
   text-align: center;
 }

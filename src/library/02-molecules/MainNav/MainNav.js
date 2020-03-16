@@ -129,7 +129,7 @@ const MainNav = ({
               siteLogo &&
               <img src={ siteLogo } alt="Neil George Photography Logo" className="site-logo" />
             }
-            { siteTitle }
+            <p>{ siteTitle }</p>
           </Link>
           <button onClick={ () => controlMenu('toggle') } className="main-nav__menu-icon">
             <div className="main-nav__menu-icon--top"></div>
