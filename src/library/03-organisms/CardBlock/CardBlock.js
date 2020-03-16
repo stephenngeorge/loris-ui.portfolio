@@ -38,7 +38,7 @@ const CardBlock = ({
         }
       })
     }
-    const options = { threshold: .25 }
+    const options = { threshold: 0 }
     const observer = new IntersectionObserver(animateCardBlock, options)
     observer.observe(cardBlock)
 
