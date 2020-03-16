@@ -1,14 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { Page, GalleryFull } from './library'
-import { PageData, GalleryFullData } from './library/data'
+import { Page, ButtonRow } from './library'
+import { PageData, ButtonRowData } from './library/data'
 
 const App = () => (
   <Router>
     <div className="App">
       <Page { ...PageData }>
-        <GalleryFull { ...GalleryFullData } />
+        <ButtonRow { ...ButtonRowData } />
       </Page>
     </div>
   </Router>

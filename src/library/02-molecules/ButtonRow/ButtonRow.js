@@ -41,7 +41,7 @@ const ButtonRow = ({
         }
       })
     }
-    const options = { threshold: 1 }
+    const options = { threshold: .4 }
     const observer = new IntersectionObserver(animateButtonRow, options)
     observer.observe(buttonRow)
 

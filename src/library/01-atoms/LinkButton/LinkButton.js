@@ -104,6 +104,8 @@ const LinkButton = ({
     <a  onMouseEnter={hoverStyles}
         onMouseLeave={hoverStyles}
         href={ buttonLink }
+        target="_blank"
+        rel="noopener noreferrer"
         style={ buttonStyles }
         className={`${classes.join(" ")}`}
     >

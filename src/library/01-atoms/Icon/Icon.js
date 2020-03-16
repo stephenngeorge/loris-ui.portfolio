@@ -60,7 +60,7 @@ const Icon = ({
       <img style={ imageStyles } src={ src } alt={ name } />
     </div>
   ) : (
-    <a href={ url } className={`${classes.join(" ")}`}>
+    <a href={ url } target="_blank" rel="noopener noreferrer" className={`${classes.join(" ")}`}>
       <img style={ imageStyles } src={ src } alt={ name } />
     </a>
   )

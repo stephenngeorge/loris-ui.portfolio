@@ -8,6 +8,8 @@
   .card {
     margin: 1rem;
     max-width: 100% !important;
+    transform: translateX(1rem);
+    opacity: 0;
     @include breakpoint("lg") {
       max-width: 50% !important;
     }
