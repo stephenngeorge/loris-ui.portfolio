@@ -35,7 +35,8 @@ const ImageFocus = ({
     <div className={`${classes.join(" ")}`}>
       <CoverImage
         { ...images[focusImage] }
-        imageSize={ {width: "100%", height: "auto"} }
+        imageSize={ {width: "auto", height: "auto"} }
+        objectFit="contain"
       />
     </div>
   )

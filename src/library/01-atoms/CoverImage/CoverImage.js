@@ -24,6 +24,7 @@ const CoverImage = ({
   imagePos,
   imageSize,
   imageSrc,
+  objectFit,
   scopedStyles
 }) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -80,11 +81,12 @@ const CoverImage = ({
   const classes = [
     "cover-image",
     isLoading ? "image-loading" : "",
+    `image--${objectFit}`,
     ...additionalClasses
   ]
   return validateImage(imagePos, imageSize).length > 0 ? null : (
     <div style={ styles } className={`${classes.join(" ")}`} id={ coverImageId }>
-      <img  data-object-fit="cover"
+      <img  data-object-fit={ objectFit }
             alt={ imageAlt }
             id={ imageId }
             src={ imagePlaceholderSrc ? imagePlaceholderSrc : imageSrc }
@@ -103,6 +105,7 @@ CoverImage.propTypes = {
   imagePos: PropTypes.object, // <-- object with keys "x" and "y"
   imageSize: PropTypes.object, // <-- object with keys "width" and "height"
   imageSrc: PropTypes.string, // <-- file path to a .jpg, .png, .svg...
+  objectFit: PropTypes.string,
   scopedStyles: PropTypes.object
 }
 
@@ -111,6 +114,7 @@ CoverImage.defaultProps = {
   imageAlt: "loris-ui.portfolio image",
   imagePos: { x: "50%", y: "50%" },
   imageSize: { width: "24rem", height: "16rem" },
+  objectFit: "cover",
   scopedStyles: {}
 }
 
