@@ -25,9 +25,10 @@ const GalleryFull = ({
   additionalClasses,
   children,
   galleryColor,
-  images
+  images,
+  initialImage
 }) => {
-  const [focusImage, setFocusImage] = useState(0);
+  const [focusImage, setFocusImage] = useState(initialImage);
 
   const classes = ["gallery-full", ...additionalClasses]
   return (
@@ -42,12 +43,14 @@ const GalleryFull = ({
 GalleryFull.propTypes = {
   additionalClasses: PropTypes.array,
   galleryColor: PropTypes.string,
-  images: PropTypes.array.isRequired
+  images: PropTypes.array.isRequired,
+  initialImage: PropTypes.number
 }
 
 GalleryFull.defaultProps = {
   additionalClasses: [],
-  galleryColor: "secondary_light"
+  galleryColor: "secondary_light",
+  initialImage: 0
 }
 
 export default GalleryFull
