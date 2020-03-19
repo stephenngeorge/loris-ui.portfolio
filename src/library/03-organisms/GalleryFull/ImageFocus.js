@@ -31,10 +31,17 @@ const ImageFocus = ({
   images
 }) => {
   const classes = ["image-focus", ...additionalClasses]
+  // override the image id and append --focus,
+  // this ensures the image Id is different to the
+  // thumbnail image id in the image scroller.
+  const imageProps = {
+    ...images[focusImage],
+    imageId: `${images[focusImage].imageId}--focus`
+  }
   return (
     <div className={`${classes.join(" ")}`}>
       <CoverImage
-        { ...images[focusImage] }
+        { ...imageProps }
         imageSize={ {width: "auto", height: "auto"} }
         objectFit="contain"
       />
