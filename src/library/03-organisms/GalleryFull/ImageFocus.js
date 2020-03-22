@@ -36,7 +36,7 @@ const ImageFocus = ({
   // thumbnail image id in the image scroller.
   const imageProps = {
     ...images[focusImage],
-    imageId: `${images[focusImage].imageId}--focus`
+    imageId: images.length > 0 ? `${images[focusImage].imageId}--focus` : 'image--focus'
   }
   return (
     <div className={`${classes.join(" ")}`}>
