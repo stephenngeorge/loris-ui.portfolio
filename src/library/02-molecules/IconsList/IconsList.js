@@ -44,7 +44,7 @@ const IconsList = ({
     const observer = new IntersectionObserver(animateIconsList, options)
     lists.forEach(list => observer.observe(list))
 
-    return () => lists.forEach(list => observer.unobserve(list))
+    return () => observer.disconnect()
   }, [])
   
   const validateList = (direction) => {

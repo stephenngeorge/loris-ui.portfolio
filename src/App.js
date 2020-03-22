@@ -1,17 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
-
-import { Page, GalleryFull } from './library'
-import { PageData, GalleryFullData } from './library/data'
+import { Page, PageNav } from './library'
+import { PageData, PageNavData } from './library/data'
 
 const App = () => (
-  <Router>
-    <div className="App">
-      <Page { ...PageData }>
-        <GalleryFull { ...GalleryFullData } />
-      </Page>
-    </div>
-  </Router>
+  <div className="App">
+    <Page { ...PageData }>
+      <PageNav { ...PageNavData } />
+    </Page>
+  </div>
 )
 
 export default App

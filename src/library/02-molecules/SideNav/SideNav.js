@@ -44,8 +44,8 @@ const SideNav = ({
     const observer = new IntersectionObserver(animateSideNav, options)
     observer.observe(sideNav)
 
-    return () => observer.unobserve(sideNav)
-  }, [])
+    return () => observer.disconnect()
+  }, [menuItems])
 
   // consume theme and set styles
   const { colors, fontFamilies, fontSizes } = useContext(ThemeContext)

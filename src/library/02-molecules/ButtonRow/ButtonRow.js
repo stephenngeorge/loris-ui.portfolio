@@ -45,7 +45,7 @@ const ButtonRow = ({
     const observer = new IntersectionObserver(animateButtonRow, options)
     observer.observe(buttonRow)
 
-    return () => observer.unobserve(buttonRow)
+    return () => observer.disconnect()
   })
 
   // consume theme and set styles

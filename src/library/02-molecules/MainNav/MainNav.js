@@ -54,7 +54,7 @@ const MainNav = ({
       const observer = new IntersectionObserver(animateNav, options)
       observer.observe(mainNav)
 
-      return () => observer.unobserve(mainNav)
+      return () => observer.disconnect()
     }
   }, [])
 

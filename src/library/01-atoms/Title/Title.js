@@ -39,7 +39,7 @@ const Title = ({
     const titles = Array.from(document.querySelectorAll('.title'))
     if (titles.length > 0) titles.forEach(title => observer.observe(title))
 
-    return () => titles.forEach(title => observer.unobserve(title))
+    return () => observer.disconnect()
   }, [titleText])
   
   //consume context and set styles

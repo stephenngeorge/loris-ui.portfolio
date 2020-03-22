@@ -42,8 +42,8 @@ const CardBlock = ({
     const observer = new IntersectionObserver(animateCardBlock, options)
     observer.observe(cardBlock)
 
-    return () => observer.unobserve(cardBlock)
-  }, [])
+    return () => observer.disconnect()
+  }, [children])
 
   // consume theme and set styles
   const { colors } = useContext(ThemeContext)

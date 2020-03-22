@@ -41,8 +41,8 @@ const PageNav = ({
     const pageNav = document.querySelector('.page-nav')
     observer.observe(pageNav)
 
-    return () => observer.unobserve(pageNav)
-  }, [])
+    return () => observer.disconnect()
+  }, [links])
 
   // consume theme and set styles
   const { colors, fontFamilies, fontWeights, layout } = useContext(ThemeContext)
@@ -67,7 +67,7 @@ const PageNav = ({
     <nav style={ navStyles } className={`${classes.join(" ")}`}>
       {
         links.map(link => (
-          <Link className={`page-nav__link page-nav__link--${linkHighlight}`} key={ link.label } to={ link.path }>
+          <Link className={`page-nav__link page-nav__link--${linkHighlight}`} key={ link.label } to={ link.url }>
             { link.label }
             <div style={ underlineStyles } className="underline"></div>
           </Link>
