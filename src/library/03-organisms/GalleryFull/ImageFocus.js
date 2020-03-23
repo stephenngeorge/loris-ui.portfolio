@@ -20,7 +20,7 @@
  * 
  */
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import { CoverImage } from '../../01-atoms'
@@ -30,7 +30,22 @@ const ImageFocus = ({
   focusImage,
   images
 }) => {
-  const classes = ["image-focus", ...additionalClasses]
+  const [orientation, setOrientation] = useState("portrait")
+  useEffect(() => {
+    const calculateOrientation = () => {
+      const { innerWidth: width, innerHeight: height } = window
+      if (height > width) setOrientation("portrait")
+      else setOrientation("landscape")
+    }
+    calculateOrientation()
+    window.addEventListener('resize', calculateOrientation)
+  }, [])
+
+  const classes = [
+    "image-focus",
+    `image-focus--${orientation}`,
+    ...additionalClasses
+  ]
   // override the image id and append --focus,
   // this ensures the image Id is different to the
   // thumbnail image id in the image scroller.
