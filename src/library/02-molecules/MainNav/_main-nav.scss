@@ -25,8 +25,17 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
   z-index: $zindex-foreground;
 
   transition: height .1s ease-out;
-  &--wide .site-title {
-    opacity: 0;
+  &--wide {
+    .site-title,
+    .main-nav__menu a {
+      opacity: 0;
+    }
+  }
+  &--narrow {
+    .site-title,
+    .main-nav__menu a {
+      opacity: 1;
+    }
   }
   // remove underline from all menu links
   a {
@@ -134,7 +143,6 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
       color: inherit;
       font-size: 1rem;
       font-weight: $font-weight-heavy;
-      opacity: 0;
 
       display: flex;
       justify-content: center;
