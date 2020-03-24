@@ -25,6 +25,18 @@ const data = {
     {
       label: "Insects",
       url: "/galleries/insects"
+    },
+    {
+      label: "Animals",
+      url: "/galleries/animals"
+    },
+    {
+      label: "Birds",
+      url: "/galleries/birds"
+    },
+    {
+      label: "Insects",
+      url: "/galleries/insects"
     }
   ],
   linkHighlight: "secondary"

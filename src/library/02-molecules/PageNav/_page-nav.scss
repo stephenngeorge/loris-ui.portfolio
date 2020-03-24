@@ -6,6 +6,10 @@
 .page-nav__link {
   position: relative;
   margin: 0 1rem;
+  margin-bottom: .75rem;
+  @include breakpoint("md") {
+    margin-bottom: 0;
+  }
   text-decoration: none;
   color: inherit;
   font-family: inherit;
