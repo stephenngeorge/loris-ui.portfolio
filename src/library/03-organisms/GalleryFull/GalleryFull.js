@@ -15,7 +15,7 @@
  * @requires './ImageFocus.js'
  */
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import ImageScroller from './ImageScroller'
@@ -25,10 +25,12 @@ const GalleryFull = ({
   additionalClasses,
   children,
   galleryColor,
-  images,
-  initialImage
+  images
 }) => {
-  const [focusImage, setFocusImage] = useState(initialImage);
+  const [focusImage, setFocusImage] = useState(0);
+  useEffect(() => {
+    setFocusImage(0)
+  }, [images])
 
   const classes = ["gallery-full", ...additionalClasses]
   return (
@@ -43,14 +45,12 @@ const GalleryFull = ({
 GalleryFull.propTypes = {
   additionalClasses: PropTypes.array,
   galleryColor: PropTypes.string,
-  images: PropTypes.array.isRequired,
-  initialImage: PropTypes.number
+  images: PropTypes.array.isRequired
 }
 
 GalleryFull.defaultProps = {
   additionalClasses: [],
-  galleryColor: "secondary_light",
-  initialImage: 0
+  galleryColor: "secondary_light"
 }
 
 export default GalleryFull

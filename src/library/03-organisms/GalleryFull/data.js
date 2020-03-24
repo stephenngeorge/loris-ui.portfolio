@@ -90,8 +90,7 @@ const data = {
       placeholderImageSrc: NGPHOTO_LOGO_MARK_BW,
       imageSrc: NGPHOTO_TEST_9
     }
-  ],
-  initialImage: 5
+  ]
 }
 
 export {
