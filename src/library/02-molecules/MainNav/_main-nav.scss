@@ -172,11 +172,24 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 }
 
 .main-nav--dark {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-50%);
+    background-color: rgba($color--dark, 1);
+    z-index: -1;
+  }
   .main-nav__controls a {
     color: $color--light;
   }
 
   .main-nav__menu {
+    z-index: 1;
     background-color: $color--dark;
     color: $color--light;
     box-shadow: $menu-shadow;
@@ -194,6 +207,22 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 
 .main-nav--light {
   height: $menu-height--tall;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-50%);
+    background-color: rgba($color--dark, .4);
+    z-index: -1;
+  }
+
+  .main-nav__menu {
+    z-index: 1;
+  }
 
   .main-nav__controls {
     height: $menu-height--tall;
@@ -214,25 +243,25 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
   }
 }
 
-.nav-wrapper--dark,
-.nav-wrapper--light {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: $zindex-foreground - 10;
+// .nav-wrapper--dark,
+// .nav-wrapper--light {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: $zindex-foreground - 10;
 
-  transition: background-color .2s ease, height .2s ease;
-}
+//   transition: background-color .2s ease, height .2s ease;
+// }
 
-.nav-wrapper--dark {
-  height: $menu-height--short;
-  background-color: $color--dark;
-  box-shadow: $menu-shadow;
-  border: 1px solid $color--dark;
-}
+// .nav-wrapper--dark {
+//   height: $menu-height--short;
+//   background-color: $color--dark;
+//   box-shadow: $menu-shadow;
+//   border: 1px solid $color--dark;
+// }
 
-.nav-wrapper--light {
-  height: $menu-height--tall;
-  background-color: rgba($color--dark, .4);
-}
+// .nav-wrapper--light {
+//   height: $menu-height--tall;
+//   background-color: rgba($color--dark, .4);
+// }

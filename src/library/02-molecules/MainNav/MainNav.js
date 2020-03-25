@@ -121,28 +121,26 @@ const MainNav = ({
     ...additionalClasses
   ]
   return (
-    <div className={`nav-wrapper--${colorTheme}`}>
-      <div style={ menuStyles } className={`${classes.join(" ")}`}>
-        <div className="main-nav__controls">
-          <Link className="site-title" onClick={ () => controlMenu('remove') } to="/">
-            {
-              siteLogo &&
-              <img src={ siteLogo } alt="Neil George Photography Logo" className="site-logo" />
-            }
-            <p>{ siteTitle }</p>
-          </Link>
-          <button onClick={ () => controlMenu('toggle') } className="main-nav__menu-icon">
-            <div className="main-nav__menu-icon--top"></div>
-            <div className="main-nav__menu-icon--middle"></div>
-            <div className="main-nav__menu-icon--bottom"></div>
-          </button>
-        </div>
-        <nav style={ linkStyles } className="main-nav__menu">
-          { menuLinks.map(link => (
-            <Link onClick={ () => controlMenu('remove') } key={ link.label } to={ link.path }>{ link.label }</Link>) 
-          ) }
-        </nav>
+    <div style={ menuStyles } className={`${classes.join(" ")}`}>
+      <div className="main-nav__controls">
+        <Link className="site-title" onClick={ () => controlMenu('remove') } to="/">
+          {
+            siteLogo &&
+            <img src={ siteLogo } alt="Neil George Photography Logo" className="site-logo" />
+          }
+          <p>{ siteTitle }</p>
+        </Link>
+        <button onClick={ () => controlMenu('toggle') } className="main-nav__menu-icon">
+          <div className="main-nav__menu-icon--top"></div>
+          <div className="main-nav__menu-icon--middle"></div>
+          <div className="main-nav__menu-icon--bottom"></div>
+        </button>
       </div>
+      <nav style={ linkStyles } className="main-nav__menu">
+        { menuLinks.map(link => (
+          <Link onClick={ () => controlMenu('remove') } key={ link.label } to={ link.path }>{ link.label }</Link>) 
+        ) }
+      </nav>
     </div>
   )
 }
