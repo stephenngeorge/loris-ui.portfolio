@@ -172,7 +172,8 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 }
 
 .main-nav--dark {
-  position: relative;
+  position: fixed;
+  box-shadow: $menu-shadow;
   &::after {
     position: absolute;
     content: "";
@@ -207,7 +208,7 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 
 .main-nav--light {
   height: $menu-height--tall;
-  position: relative;
+  position: fixed;
   &::after {
     position: absolute;
     content: "";
