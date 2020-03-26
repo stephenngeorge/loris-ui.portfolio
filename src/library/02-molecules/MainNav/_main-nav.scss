@@ -173,7 +173,6 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
 
 .main-nav--dark {
   position: fixed;
-  box-shadow: $menu-shadow;
   &::after {
     position: absolute;
     content: "";
@@ -183,6 +182,7 @@ $menu-shadow: 0 .25rem .375rem 0 rgba(0, 0, 0, .4);
     height: 100%;
     transform: translateX(-50%);
     background-color: rgba($color--dark, 1);
+    box-shadow: $menu-shadow;
     z-index: -1;
   }
   .main-nav__controls a {
