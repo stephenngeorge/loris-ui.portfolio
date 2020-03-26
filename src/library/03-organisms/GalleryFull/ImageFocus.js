@@ -32,6 +32,10 @@ const ImageFocus = ({
 }) => {
   const [orientation, setOrientation] = useState("portrait")
   useEffect(() => {
+    setTimeout(() => {
+      const imageFocus = document.querySelector('.image-focus')
+      imageFocus.style.opacity = 1
+    }, 200)
     const calculateOrientation = () => {
       const { innerWidth: width, innerHeight: height } = window
       if (height > width) setOrientation("portrait")

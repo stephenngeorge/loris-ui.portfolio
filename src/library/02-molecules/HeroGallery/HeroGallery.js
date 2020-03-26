@@ -55,6 +55,8 @@ const HeroGallery = ({
     height: gallerySize.height
   }
 
+  // handleScroll used as click event callback on down chevron
+  // scrolls to the bottom of the hero gallery
   const handleScroll = () => {
     const galleryHeight = document.querySelector('.hero-gallery').clientHeight
     window.scrollTo(0, (galleryHeight - 32))
@@ -65,7 +67,9 @@ const HeroGallery = ({
     <section style={ galleryStyles } className={`${classes.join(" ")}`}>
       {
         images.map((image, i) => {
+          // apply class to the image in view
           let viewClass = imageInView === i ? "image-cross-fade" : ""
+          // adjust margin left of first image to shift whole row
           let galleryPosition = i === 0 ? `-${100 * imageInView}%` : "0"
           return (
             <CoverImage

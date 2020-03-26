@@ -42,6 +42,7 @@ const CoverImage = ({
     }
   }, [imageSrc, imageId])
 
+  // set theme styles
   const styles = {
     width: imageSize.width,
     height: imageSize.height,
@@ -53,7 +54,7 @@ const CoverImage = ({
 
   const validateImage = (imagePos, imageSize) => {
     let errors = []
-
+    // check that the imagePos prop has the correct properties
     let imagePosKeys = Object.keys(imagePos)
     if (imagePosKeys.indexOf("x") < 0 || imagePosKeys.indexOf("y") < 0) {
       errors.push({
@@ -62,7 +63,7 @@ const CoverImage = ({
         message: "imagePos prop must be an object containing keys 'x' and 'y'"
       })
     }
-
+    // check that the imageSize prop has the correct properties
     let imageSizeKeys = Object.keys(imageSize)
     if (imageSizeKeys.indexOf("width") < 0 || imageSizeKeys.indexOf("height") < 0) {
       errors.push({

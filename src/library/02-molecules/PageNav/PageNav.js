@@ -29,6 +29,7 @@ const PageNav = ({
         if (entry.isIntersecting) {
           const links = Array.from(document.querySelectorAll('.page-nav__link'))
           links.forEach((link, i) => {
+            // stagger animation for nav items
             link.style.animationDelay = `${i * 200}ms`
             link.classList.add('slide-from-top__fade-in--medium')
           })

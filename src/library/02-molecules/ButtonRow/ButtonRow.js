@@ -34,10 +34,12 @@ const ButtonRow = ({
           // get buttons
           const buttons = Array.from(buttonRow.querySelectorAll('.link-button'))
           buttons.forEach((btn, i) => {
+            // stagger buttons animations
             btn.style.animationDelay = `.${i * 2}s`
             btn.classList.add('slide-from-bottom__fade-in--medium')
-            underline.classList.add('scale-in-underline')
           })
+          // animate underline
+          underline.classList.add('scale-in-underline')
         }
       })
     }
@@ -57,7 +59,7 @@ const ButtonRow = ({
 
   const validateRow = rowWidth => {
     const errors = []
-
+    // check the rowWidth prop is one of the allowed values
     if (["narrow", "very-narrow"].indexOf(rowWidth) < 0) {
       errors.push({
         type: errorTypes.VALUE_OUT_OF_RANGE,

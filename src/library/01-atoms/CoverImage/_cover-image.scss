@@ -8,6 +8,8 @@
   }
 }
 
+// image-- classes represent different
+// object-fit property values
 .cover-image.image--cover {
   img {
     width: 100%;
@@ -21,10 +23,14 @@
   }
 }
 
+// image-loading is applied until image
+// has been completed downloaded from remote source
 .cover-image.image-loading {
   display: flex;
   justify-content: center;
   align-items: center;
+  // loading images have a placeholder image
+  // that rotates as target image loads
   img {
     max-width: 12rem;
     object-fit: unset;
@@ -32,6 +38,7 @@
   }
 }
 
+// define animation
 @keyframes cover-image-spinner {
   0% { transform: rotate(0); }
   70%, 100% { transform: rotate(180deg); }

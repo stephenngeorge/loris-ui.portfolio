@@ -21,7 +21,7 @@ const Spinner = ({
 }) => {
   const validateSpinner = speed => {
     const errors = []
-
+    // check speed prop is one of the allowed values
     if (['slow', 'normal', 'fast'].indexOf(speed) < 0) {
       errors.push({
         type: errorTypes.VALUE_OUT_OF_RANGE,

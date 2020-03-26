@@ -34,6 +34,7 @@ const SideNav = ({
         if (entry.isIntersecting) {
           const sideNavLinks = Array.from(sideNav.querySelectorAll('a'))
           sideNavLinks.forEach((link, i) => {
+            // stagger animations for nav items
             link.style.animationDelay = `${i * 120}ms`
             link.classList.add('slide-from-right__fade-in--slow')
           })

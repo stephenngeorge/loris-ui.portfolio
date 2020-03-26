@@ -33,6 +33,7 @@ const IconsList = ({
           // get icons
           const icons = Array.from(entry.target.querySelectorAll('.icon'))
           icons.forEach((icon, i) => {
+            // stagger icon animations
             icon.style.animationDelay = `.${i * 2}s`
             icon.classList.add('slide-from-right__fade-in--medium')
           })
@@ -49,7 +50,7 @@ const IconsList = ({
   
   const validateList = (direction) => {
     let errors = []
-    
+    // check the direction prop is one of the allowed values
     if (["column", "row", "column-reverse", "row-reverse"].indexOf(direction) < 0) {
       errors.push({
         type: errorTypes.VALUE_OUT_OF_RANGE,

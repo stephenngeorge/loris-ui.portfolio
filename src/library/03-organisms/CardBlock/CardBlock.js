@@ -9,6 +9,7 @@
  * component can either be set to wrap row and flow 
  * down the page, or wrap on column whence the overflow
  * on the x-axis becomes scrollable.
+ * 
  */
 
 import React, { useContext, useEffect } from "react"
@@ -32,6 +33,7 @@ const CardBlock = ({
           // get cards
           const cards = Array.from(cardBlock.querySelectorAll('.card'))
           cards.forEach((card, i) => {
+            // stagger animations for cards
             card.style.animationDelay = `${i * 100}ms`
             card.classList.add('slide-from-right__fade-in--medium')
           })

@@ -6,6 +6,8 @@
   }
 }
 
+// set styles for placeholder image, ensure it doesn't
+// get too large.
 .image-loader.image-loader--loading {
   display: flex;
   justify-content: center;
@@ -16,6 +18,7 @@
   }
 }
 
+// define animation
 @keyframes loading-animation {
   0% { transform: rotate(0); }
   70%, 100% { transform: rotate(180deg); }

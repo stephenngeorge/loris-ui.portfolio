@@ -104,6 +104,7 @@ const MainNav = ({
 
   // menu behaviours
   const controlMenu = (func) => {
+    window.scrollTo(0, 0)
     const menu = document.querySelector(".main-nav__menu")
     const icon = document.querySelector(".main-nav__menu-icon")
 
