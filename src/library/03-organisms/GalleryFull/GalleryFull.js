@@ -25,7 +25,6 @@ const GalleryFull = ({
   additionalClasses,
   children,
   galleryColor,
-  galleryName,
   images
 }) => {
   const [focusImage, setFocusImage] = useState();
@@ -77,7 +76,6 @@ const GalleryFull = ({
         images={ images }
         focusImage={ focusImage }
         scrollImage={ scrollImage }
-        galleryName={ galleryName }
       />
     </section>
   )
@@ -86,7 +84,6 @@ const GalleryFull = ({
 GalleryFull.propTypes = {
   additionalClasses: PropTypes.array,
   galleryColor: PropTypes.string,
-  galleryName: PropTypes.string.isRequired,
   images: PropTypes.array.isRequired
 }
 
