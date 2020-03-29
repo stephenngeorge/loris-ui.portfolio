@@ -23,12 +23,13 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
-import { CoverImage } from '../../01-atoms'
+import chevron from './down-chevron.svg'
 
 const ImageFocus = ({
   additionalClasses,
   focusImage,
-  images
+  images,
+  scrollImage
 }) => {
   const [orientation, setOrientation] = useState("portrait")
   useEffect(() => {
@@ -57,12 +58,24 @@ const ImageFocus = ({
     ...images[focusImage],
     imageId: images.length > 0 && focusImage < images.length ? `${images[focusImage].imageId}--focus` : 'image--focus'
   }
+
   return (
     <div className={`${classes.join(" ")}`}>
-      <CoverImage
-        { ...imageProps }
-        imageSize={ {width: "auto", height: "auto"} }
-        objectFit="contain"
+      <img  onClick={() => scrollImage("left")}
+            alt="left arrow" src={ chevron }
+            className="image-control"
+            id="scroll-left"
+      />
+      <img  className="image-focus--image"
+            id={ imageProps.imageId }
+            alt={ imageProps.imageAlt }
+            src={ imageProps.imageSrc }
+      />
+      <img  onClick={() => scrollImage("right")}
+            alt="right arrow"
+            src={ chevron }
+            className="image-control"
+            id="scroll-right"
       />
     </div>
   )
@@ -71,11 +84,13 @@ const ImageFocus = ({
 ImageFocus.propTypes = {
   additionalClasses: PropTypes.array,
   focusImage: PropTypes.number.isRequired,
-  images: PropTypes.array.isRequired
+  images: PropTypes.array.isRequired,
+  scrollImage: PropTypes.func.isRequired
 }
 
 ImageFocus.defaultProps = {
-  additionalClasses: []
+  additionalClasses: [],
+  focusImage: 0
 }
 
 export default ImageFocus

@@ -30,6 +30,7 @@ import { ThemeContext } from '../../00-protons/Themer/Themer'
 
 const ImageScroller = ({
   additionalClasses,
+  autoScroll,
   bgColor,
   images,
   scopedStyles,
@@ -49,7 +50,10 @@ const ImageScroller = ({
       {
         images.length > 0 &&
         images.map((image, i) => (
-          <div onClick={ () => setFocusImage(i) } className="image-scroller__image" key={ image.imageId }>
+          <div onClick={e => {
+            autoScroll(e)
+            setFocusImage(i)
+          }} className="image-scroller__image" key={ image.imageId }>
             <ImageLoader { ...image } />
             <p className="image-scroller__image--name">
               { image.imageName }
@@ -63,6 +67,7 @@ const ImageScroller = ({
 
 ImageScroller.propTypes = {
   additionalClasses: PropTypes.array,
+  autoScroll: PropTypes.func.isRequired,
   bgColor: PropTypes.string,
   images: PropTypes.array.isRequired,
   scopedStyles: PropTypes.object,

@@ -51,30 +51,47 @@
   // has loaded. @see './ImageFocus.js'
   opacity: 0;
   transition: opacity .2s ease;
-  padding: .5rem;
+  padding: 1rem;
+  position: relative;
   @include breakpoint("md") {
     padding: 2rem;
     padding-bottom: 4rem;
+  }
+  @include breakpoint("lg") {
+    padding: 2rem 8rem;
   }
   // set height depending on device aspect ratio
   &--landscape { height: 80vh; }
   &--portrait { height: 55vh; }
   display: flex;
-  // override some of the .cover-image styles
-  .cover-image {
-    width: 100%;
-    margin: 0 auto;
-    box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .65);
-    opacity: 1;
-    background-color: rgba($color--secondary, .2);
+  justify-content: center;
+  align-items: center;
 
-    img {
-      max-width: 100%;
-      margin: 0 auto;
+  &--image {
+    max-height: 100%;
+    max-width: 100%;
+    box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .65);
+  }
+
+  .image-control {
+    position: absolute;
+    top: 50%;
+    width: 4rem;
+    cursor: pointer;
+
+    display: none;
+    @include breakpoint("lg") {
+      display: block;
     }
   }
-  // don't show image whilst loading
-  .cover-image.image-loading {
-    opacity: 0;
+
+  #scroll-left {
+    left: 2rem;
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  #scroll-right {
+    right: 2rem;
+    transform: translateY(-50%) rotate(-90deg);
   }
 }

@@ -15,7 +15,7 @@
  * @requires './ImageFocus.js'
  */
 
-import React, { useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import PropTypes from "prop-types"
 
 import ImageScroller from './ImageScroller'
@@ -27,17 +27,56 @@ const GalleryFull = ({
   galleryColor,
   images
 }) => {
-  const [focusImage, setFocusImage] = useState(0);
+  const [focusImage, setFocusImage] = useState();
+  const scrollImage = useCallback(dir => {
+    if (dir === "left") {
+      if (focusImage > 0) setFocusImage(focusImage - 1)
+      else setFocusImage(images.length - 1)
+    }
+
+    if (dir === "right") {
+      if (focusImage < images.length - 1) setFocusImage(focusImage + 1)
+      else setFocusImage(0)
+    }
+  }, [focusImage, images.length])
+  // control the focus image with left and right arrow keys
+  useEffect(() => {
+    const handleKeyUp = e => {
+      e.preventDefault()
+      if (e.keyCode === 37) scrollImage("left")
+      if (e.keyCode === 39) scrollImage("right")
+    }
+    document.addEventListener('keyup', handleKeyUp)
+
+    return () => document.removeEventListener('keyup', handleKeyUp)
+  }, [focusImage, scrollImage])
+  // everytime images changes (new gallery is loaded), reset the
+  // focus image valeu to 0
   useEffect(() => {
     setFocusImage(0)
   }, [images])
 
+  const autoScroll = e => {
+    e.preventDefault()
+    const imageFocusSection = document.querySelector('.image-focus')
+    window.scrollTo(0, imageFocusSection.offsetTop - 64)
+  }
+
   const classes = ["gallery-full", ...additionalClasses]
   return (
     <section className={`${classes.join(" ")}`}>
-      <ImageScroller images={ images } bgColor={ galleryColor } setFocusImage={ setFocusImage } />
+      <ImageScroller
+        images={ images }
+        bgColor={ galleryColor }
+        setFocusImage={ setFocusImage }
+        autoScroll={ autoScroll }
+      />
       { children }
-      <ImageFocus images={ images } focusImage={ focusImage } />
+      <ImageFocus
+        images={ images }
+        focusImage={ focusImage }
+        scrollImage={ scrollImage }
+      />
     </section>
   )
 }
