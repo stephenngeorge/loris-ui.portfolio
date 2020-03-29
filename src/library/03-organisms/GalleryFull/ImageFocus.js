@@ -20,14 +20,17 @@
  * 
  */
 
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import PropTypes from "prop-types"
+import { ThemeContext } from '../../00-protons/Themer/Themer'
+import { Title } from '../../01-atoms'
 
 import chevron from './down-chevron.svg'
 
 const ImageFocus = ({
   additionalClasses,
   focusImage,
+  galleryName,
   images,
   scrollImage
 }) => {
@@ -46,6 +49,15 @@ const ImageFocus = ({
     window.addEventListener('resize', calculateOrientation)
   }, [])
 
+  // consume theme context and set styles
+  const { fontFamilies, fontSizes, layout } = useContext(ThemeContext)
+  const imageNameStyles = {
+    fontFamily: fontFamilies.serif,
+    fontSize: fontSizes.lead,
+    marginBottom: layout.spacing_md,
+    marginTop: layout.spacing_md
+  }
+
   const classes = [
     "image-focus",
     `image-focus--${orientation}`,
@@ -61,6 +73,8 @@ const ImageFocus = ({
 
   return (
     <div className={`${classes.join(" ")}`}>
+      <Title titleText={ galleryName } titleLevel={ 2 } underlineColor="main" />
+      <p className="image-name" style={ imageNameStyles }>{ imageProps.imageName }</p>
       <img  onClick={() => scrollImage("left")}
             alt="left arrow" src={ chevron }
             className="image-control"
@@ -84,6 +98,7 @@ const ImageFocus = ({
 ImageFocus.propTypes = {
   additionalClasses: PropTypes.array,
   focusImage: PropTypes.number.isRequired,
+  galleryName: PropTypes.string.isRequired,
   images: PropTypes.array.isRequired,
   scrollImage: PropTypes.func.isRequired
 }

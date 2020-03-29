@@ -90,7 +90,8 @@ const data = {
       placeholderImageSrc: NGPHOTO_LOGO_MARK_BW,
       imageSrc: NGPHOTO_TEST_9
     }
-  ]
+  ],
+  galleryName: "New work"
 }
 
 export {

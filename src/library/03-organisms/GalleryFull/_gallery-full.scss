@@ -53,6 +53,7 @@
   transition: opacity .2s ease;
   padding: 1rem;
   position: relative;
+  overflow: visible;
   @include breakpoint("md") {
     padding: 2rem;
     padding-bottom: 4rem;
@@ -64,9 +65,16 @@
   &--landscape { height: 80vh; }
   &--portrait { height: 55vh; }
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  .title {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    transform: translateY(-60%);
+  }
   &--image {
     max-height: 100%;
     max-width: 100%;
