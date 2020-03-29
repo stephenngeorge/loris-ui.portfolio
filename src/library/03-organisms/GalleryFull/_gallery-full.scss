@@ -62,7 +62,7 @@
     padding: 2rem 8rem;
   }
   // set height depending on device aspect ratio
-  &--landscape { height: 80vh; }
+  &--landscape { height: 84vh; }
   &--portrait { height: 55vh; }
   display: flex;
   flex-direction: column;
@@ -73,6 +73,13 @@
     max-height: 100%;
     max-width: 100%;
     box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .65);
+  }
+
+  .image-name {
+    display: none;
+    @include breakpoint("lg") {
+      display: block;
+    }
   }
 
   .image-control {

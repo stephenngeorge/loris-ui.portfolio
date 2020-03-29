@@ -48,12 +48,11 @@ const ImageFocus = ({
   }, [])
 
   // consume theme context and set styles
-  const { fontFamilies, fontSizes, layout } = useContext(ThemeContext)
+  const { fontFamilies, fontSizes } = useContext(ThemeContext)
   const imageNameStyles = {
     fontFamily: fontFamilies.serif,
     fontSize: fontSizes.lead,
-    marginBottom: layout.spacing_md,
-    marginTop: layout.spacing_md
+    paddingTop: "1rem"
   }
 
   const classes = [
@@ -71,7 +70,6 @@ const ImageFocus = ({
 
   return (
     <div className={`${classes.join(" ")}`}>
-      <p className="image-name" style={ imageNameStyles }>{ imageProps.imageName }</p>
       <img  onClick={() => scrollImage("left")}
             alt="left arrow" src={ chevron }
             className="image-control"
@@ -88,6 +86,7 @@ const ImageFocus = ({
             className="image-control"
             id="scroll-right"
       />
+      <p className="image-name" style={ imageNameStyles }>{ imageProps.imageName }</p>
     </div>
   )
 }
