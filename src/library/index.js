@@ -21,6 +21,7 @@ import {
   IconsList,
   MainNav,
   PageNav,
+  Quote,
   SideNav,
   StaticGallery,
   TextSection
@@ -49,6 +50,7 @@ export {
   MainNav,
   Page,
   PageNav,
+  Quote,
   RichText,
   SideNav,
   Spinner,

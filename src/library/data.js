@@ -20,6 +20,7 @@ import { data as HeroGalleryData } from './02-molecules/HeroGallery/data'
 import { data as IconsListData } from './02-molecules/IconsList/data'
 import { data as MainNavData } from './02-molecules/MainNav/data'
 import { data as PageNavData } from './02-molecules/PageNav/data'
+import { data as QuoteData } from './02-molecules/Quote/data'
 import { data as SideNavData } from './02-molecules/SideNav/data'
 import { data as StaticGalleryData } from './02-molecules/StaticGallery/data'
 import { data as TextSectionData } from './02-molecules/TextSection/data'
@@ -45,6 +46,7 @@ export {
   IconsListData,
   MainNavData,
   PageNavData,
+  QuoteData,
   SideNavData,
   StaticGalleryData,
   TextSectionData,

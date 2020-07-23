@@ -1,11 +1,11 @@
 import React from 'react'
-import { Page, GalleryFull } from './library'
-import { PageData, GalleryFullData } from './library/data'
+import { Page, Title } from './library'
+import { PageData, TitleData } from './library/data'
 
 const App = () => (
   <div className="App">
     <Page { ...PageData }>
-      <GalleryFull { ...GalleryFullData } />
+      <Title {...TitleData} />
     </Page>
   </div>
 )
